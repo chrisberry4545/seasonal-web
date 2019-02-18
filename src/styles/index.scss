@@ -1,0 +1,20 @@
+@import "node_modules/inuitcss/settings/settings.core";
+
+@import "node_modules/sass-mq/mq";
+
+@import "node_modules/inuitcss/generic/generic.reset";
+@import "node_modules/inuitcss/generic/generic.box-sizing";
+@import "node_modules/inuitcss/generic/generic.normalize";
+@import "node_modules/inuitcss/generic/generic.shared";
+
+@import './settings';
+@import './tools';
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: $background-color;
+}
