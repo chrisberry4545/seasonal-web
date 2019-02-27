@@ -1,1 +1,1 @@
-export const DEFAULT_ANIMATION_TIME = 750;
+export const DEFAULT_ANIMATION_TIME = 500;
