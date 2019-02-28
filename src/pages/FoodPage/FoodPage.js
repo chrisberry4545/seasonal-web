@@ -1,9 +1,9 @@
 import React from 'react';
 
 import {
-  FoodTable
+  FoodTableConnecter
 } from '../../organisms';
 
 export const FoodPage = () => (
-  <FoodTable />
+  <FoodTableConnecter />
 );

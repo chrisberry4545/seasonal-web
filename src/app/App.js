@@ -9,9 +9,14 @@ import {
 } from '../pages';
 import './App.scss';
 
+import { Provider } from 'react-redux';
+import { store } from '../store/reducers';
+
 export const App = () => (
-  <div className='c-app'>
-    <Header />
-    <FoodPage />
-  </div>
+  <Provider store={store}>
+    <div className='c-app'>
+      <Header />
+      <FoodPage />
+    </div>
+  </Provider>
 );
