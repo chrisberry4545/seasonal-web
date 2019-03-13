@@ -7,8 +7,15 @@ import {
 
 import { initAppEpic } from './init.epics';
 
+import {
+  getAllSeasonDataStartEpic,
+  getAllSeasonDataEpic
+} from './season-data.epics';
+
 export const rootEpic = combineEpics(
   initAppEpic,
   getFoodDataStartEpic,
-  getFoodDataEpic
+  getFoodDataEpic,
+  getAllSeasonDataStartEpic,
+  getAllSeasonDataEpic
 );

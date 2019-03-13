@@ -1,7 +1,7 @@
 import React from 'react';
 
 import {
-  Header
+  HeaderConnecter
 } from '../organisms';
 
 import {
@@ -15,7 +15,7 @@ import { store } from '../store/reducers';
 export const App = () => (
   <Provider store={store}>
     <div className='c-app'>
-      <Header />
+      <HeaderConnecter />
       <FoodPage />
     </div>
   </Provider>
