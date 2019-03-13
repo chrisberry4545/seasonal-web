@@ -5,8 +5,8 @@ import {
 import {
   selectIsMenuOpen,
   closeMenu,
-  selectAllSeasonData,
-  selectIsSeasonDataLoading
+  selectAllBasicSeasonData,
+  selectIsBasicSeasonDataLoading
 } from '../../store';
 
 import { State } from '../../interfaces';
@@ -16,8 +16,8 @@ import { Dispatch } from 'redux';
 const mapStateToProps = (
   state: State
 ): SeasonMenuInputProps => ({
-  allSeasonData: selectAllSeasonData(state),
-  isLoading: selectIsSeasonDataLoading(state),
+  allBasicSeasonData: selectAllBasicSeasonData(state),
+  isLoading: selectIsBasicSeasonDataLoading(state),
   isMenuOpen: selectIsMenuOpen(state)
 });
 

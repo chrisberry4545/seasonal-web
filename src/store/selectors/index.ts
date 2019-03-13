@@ -1,5 +1,5 @@
-export * from './food-data.selectors';
+export * from './all-season-data.selectors';
 
-export * from './season-data.selectors';
+export * from './current-season-data.selectors';
 
 export * from './ui.selectors';

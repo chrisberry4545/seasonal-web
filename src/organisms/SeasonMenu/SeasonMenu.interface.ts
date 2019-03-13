@@ -1,7 +1,7 @@
 import { Season } from '../../interfaces';
 
 export interface SeasonMenuInputProps {
-  allSeasonData: Season[] | undefined;
+  allBasicSeasonData: Season[] | undefined;
   isLoading: boolean;
   isMenuOpen: boolean;
 }

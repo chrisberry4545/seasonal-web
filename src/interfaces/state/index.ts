@@ -1,4 +1,4 @@
-export * from './food-data-state.interface';
+export * from './current-season-data-state.interface';
 
 export * from './season-data-state.interface';
 

@@ -2,7 +2,7 @@ import {
   HydratedSeason
 } from '../backend-data';
 
-export interface FoodDataState {
+export interface CurrentSeasonDataState {
   isLoading: boolean;
   data?: HydratedSeason;
 }

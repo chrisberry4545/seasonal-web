@@ -1,9 +1,9 @@
 import { UiState } from './ui-state.interface';
 import { SeasonDataState } from './season-data-state.interface';
-import { FoodDataState } from './food-data-state.interface';
+import { CurrentSeasonDataState } from './current-season-data-state.interface';
 
 export interface State {
-  foodData: FoodDataState;
-  seasonData: SeasonDataState;
+  allBasicSeasonData: SeasonDataState;
+  currentSeasonData: CurrentSeasonDataState;
   ui: UiState;
 }

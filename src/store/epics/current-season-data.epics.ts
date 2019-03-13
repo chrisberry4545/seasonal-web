@@ -7,9 +7,9 @@ import {
 
 import {
   INIT_APP,
-  SET_FOOD_DATA_START,
-  setFoodDataSuccess,
-  setFoodDataStart
+  SET_CURRENT_SEASON_DATA_START,
+  setCurrentSeasonDataSuccess,
+  setCurrentSeasonDataStart
 } from '../actions';
 
 import {
@@ -19,17 +19,21 @@ import {
 import { Observable } from 'rxjs';
 import { Action } from 'redux';
 
-export const getFoodDataStartEpic = (actions$: Observable<Action>) => (
+export const getCurrentSeasonDataStartEpic = (
+  actions$: Observable<Action>
+) => (
   actions$.pipe(
     ofType(INIT_APP),
-    map(() => setFoodDataStart())
+    map(() => setCurrentSeasonDataStart())
   )
 );
 
-export const getFoodDataEpic = (actions$: Observable<Action>) => (
+export const getCurrentSeasonDataEpic = (
+  actions$: Observable<Action>
+) => (
   actions$.pipe(
-    ofType(SET_FOOD_DATA_START),
+    ofType(SET_CURRENT_SEASON_DATA_START),
     switchMap(() => getSeasonDataBySeasonIndex(getCurrentSeasonIndex())),
-    map((foodData) => setFoodDataSuccess(foodData))
+    map((foodData) => setCurrentSeasonDataSuccess(foodData))
   )
 );

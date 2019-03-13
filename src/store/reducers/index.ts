@@ -5,9 +5,9 @@ import {
 } from 'redux';
 import { createEpicMiddleware } from 'redux-observable';
 
-import { foodDataReducer } from './food-data.reducer';
+import { currentSeasonDataReducer } from './current-season-data.reducer';
 
-import { seasonDataReducer } from './season-data.reducer';
+import { allBasicSeasonDataReducer } from './all-basic-season-data.reducer';
 
 import { uiReducer } from './ui.reducer';
 
@@ -15,12 +15,14 @@ import {
   rootEpic
 } from '../epics';
 
+import { State } from '../../interfaces';
+
 const epicMiddleware = createEpicMiddleware();
 
 export const store = createStore(
-  combineReducers({
-    foodData: foodDataReducer,
-    seasonData: seasonDataReducer,
+  combineReducers<State>({
+    allBasicSeasonData: allBasicSeasonDataReducer,
+    currentSeasonData: currentSeasonDataReducer,
     ui: uiReducer
   }),
   applyMiddleware(epicMiddleware)
