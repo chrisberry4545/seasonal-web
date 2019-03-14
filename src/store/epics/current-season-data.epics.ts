@@ -1,7 +1,6 @@
-import { ofType } from 'redux-observable';
+import { ofType, StateObservable, ActionsObservable } from 'redux-observable';
 
 import {
-  getCurrentSeasonIndex,
   getSeasonDataBySeasonIndex
 } from '../../services';
 
@@ -9,31 +8,42 @@ import {
   INIT_APP,
   SET_CURRENT_SEASON_DATA_START,
   setCurrentSeasonDataSuccess,
-  setCurrentSeasonDataStart
+  setCurrentSeasonDataStart,
+  SELECT_SEASON
 } from '../actions';
 
 import {
   map,
-  switchMap
+  switchMap,
+  withLatestFrom
 } from 'rxjs/operators';
-import { Observable } from 'rxjs';
 import { Action } from 'redux';
+import { State } from '../../interfaces';
+import { selectCurrentSeasonIndex } from '../selectors';
+import { Observable } from 'rxjs';
+import { SeasonalEpic } from './seasonal-epic.type';
 
-export const getCurrentSeasonDataStartEpic = (
-  actions$: Observable<Action>
-) => (
+export const getCurrentSeasonDataStartEpic: SeasonalEpic = (
+  actions$: ActionsObservable<Action>,
+): Observable<Action> => (
   actions$.pipe(
-    ofType(INIT_APP),
+    ofType(
+      INIT_APP,
+      SELECT_SEASON
+    ),
     map(() => setCurrentSeasonDataStart())
   )
 );
 
-export const getCurrentSeasonDataEpic = (
-  actions$: Observable<Action>
-) => (
+export const getCurrentSeasonDataEpic: SeasonalEpic = (
+  actions$: ActionsObservable<Action>,
+  state$: StateObservable<State>,
+): Observable<Action> => (
   actions$.pipe(
     ofType(SET_CURRENT_SEASON_DATA_START),
-    switchMap(() => getSeasonDataBySeasonIndex(getCurrentSeasonIndex())),
+    withLatestFrom(state$),
+    map(([, state]) => selectCurrentSeasonIndex(state)),
+    switchMap((seasonIndex) => getSeasonDataBySeasonIndex(seasonIndex)),
     map((foodData) => setCurrentSeasonDataSuccess(foodData))
   )
 );

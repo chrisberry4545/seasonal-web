@@ -1,6 +1,7 @@
 import {
   CLOSE_MENU,
-  OPEN_MENU
+  OPEN_MENU,
+  SELECT_SEASON
 } from '../actions';
 import { UiState } from '../../interfaces';
 import { Action } from 'redux';
@@ -14,6 +15,7 @@ export function uiReducer(
   action: Action
 ): UiState {
   switch (action.type) {
+    case SELECT_SEASON:
     case CLOSE_MENU:
       return {
         ...state,

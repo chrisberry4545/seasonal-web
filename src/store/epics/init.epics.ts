@@ -3,13 +3,18 @@ import {
 } from '../actions';
 
 import {
-  of
+  of,
+  Observable
 } from 'rxjs';
 
 import {
   map
 } from 'rxjs/operators';
+import { Action } from 'redux';
+import { SeasonalEpic } from './seasonal-epic.type';
 
-export const initAppEpic = () => of(null).pipe(
-  map(() => initApp()),
+export const initAppEpic: SeasonalEpic = (): Observable<Action> => (
+  of(null).pipe(
+    map(() => initApp()),
+  )
 );

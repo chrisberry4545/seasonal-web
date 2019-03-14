@@ -17,3 +17,8 @@ export const selectCurrentSeasonFood = createSelector(
   selectCurrentSeason,
   (currentSeason): Food[] | undefined => currentSeason && currentSeason.food
 );
+
+export const selectCurrentSeasonIndex = createSelector(
+  selectCurrentSeasonDataState,
+  (currentSeasonData) => currentSeasonData.currentSeasonIndex,
+);

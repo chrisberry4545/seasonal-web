@@ -1,4 +1,4 @@
-import { ofType } from 'redux-observable';
+import { ofType, ActionsObservable } from 'redux-observable';
 
 import {
   getAllSeasonData
@@ -15,21 +15,22 @@ import {
   map,
   switchMap
 } from 'rxjs/operators';
-import { Observable } from 'rxjs';
 import { Action } from 'redux';
+import { Observable } from 'rxjs';
+import { SeasonalEpic } from './seasonal-epic.type';
 
-export const getAllBasicSeasonDataStartEpic = (
-  actions$: Observable<Action>
-) => (
+export const getAllBasicSeasonDataStartEpic: SeasonalEpic = (
+  actions$: ActionsObservable<Action>,
+): Observable<Action> => (
   actions$.pipe(
     ofType(INIT_APP),
     map(() => setAllBasicSeasonDataStart())
   )
 );
 
-export const getAllBasicSeasonDataEpic = (
-  actions$: Observable<Action>
-) => (
+export const getAllBasicSeasonDataEpic: SeasonalEpic = (
+  actions$: ActionsObservable<Action>,
+): Observable<Action> => (
   actions$.pipe(
     ofType(SET_ALL_BASIC_SEASON_DATA_START),
     switchMap(() => getAllSeasonData()),

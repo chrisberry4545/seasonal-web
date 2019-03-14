@@ -19,8 +19,10 @@ const OverlayFadeInOutAnimation = fadeInOutAnimation();
 
 export const SeasonMenu = ({
   allBasicSeasonData,
+  currentSeasonIndex,
   isLoading,
   isMenuOpen,
+  onSeasonSelected,
   onClose
 }: SeasonMenuProps) => (
   <div>
@@ -36,8 +38,16 @@ export const SeasonMenu = ({
       className={`c-season-menu ${isMenuOpen ? 'c-season-menu--is-open' : ''}`}>
       {
         !isLoading
-          ? allBasicSeasonData && allBasicSeasonData.map(({ name }) => (
-              <BareButton key={name} className='c-season-menu__button'>
+          ? allBasicSeasonData && allBasicSeasonData.map(({ name }, index) => (
+              <BareButton
+                key={name}
+                className={
+                  `c-season-menu__button ${
+                    index === currentSeasonIndex
+                      ? 'c-season-menu__button--selected'
+                      : ''
+                    }`}
+                onClick={() => onSeasonSelected(index)}>
                 <TextMedium>{ name }</TextMedium>
               </BareButton>
             ))

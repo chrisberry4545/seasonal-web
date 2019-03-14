@@ -13,3 +13,16 @@ export function closeMenu(): Action {
     type: CLOSE_MENU
   };
 }
+
+export interface SelectSeason extends Action {
+  seasonIndex: number;
+}
+export const SELECT_SEASON = 'SELECT_SEASON';
+export function selectSeason(
+  seasonIndex: number,
+): SelectSeason {
+  return {
+    seasonIndex,
+    type: SELECT_SEASON
+  };
+}

@@ -1,4 +1,5 @@
 import {
+  Action,
   applyMiddleware,
   combineReducers,
   createStore
@@ -17,7 +18,7 @@ import {
 
 import { State } from '../../interfaces';
 
-const epicMiddleware = createEpicMiddleware();
+const epicMiddleware = createEpicMiddleware<Action, Action, State, {}>();
 
 export const store = createStore(
   combineReducers<State>({
