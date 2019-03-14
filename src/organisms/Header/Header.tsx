@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { SFC } from 'react';
 
 import './Header.scss';
 
@@ -7,8 +7,9 @@ import {
   BurgerIcon,
   TextHeadingLarge
 } from '../../elements';
+import { HeaderProps } from './Header.interface';
 
-export const Header = ({
+export const Header: SFC<HeaderProps> = ({
   onMenuOpen
 }) => (
   <header className='c-header'>
