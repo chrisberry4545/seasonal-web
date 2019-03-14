@@ -1,6 +1,7 @@
 import React from 'react';
 
 import {
+  SeasonMenuConnecter,
   HeaderConnecter
 } from '../organisms';
 
@@ -16,6 +17,7 @@ export const App = () => (
   <Provider store={store}>
     <div className='c-app'>
       <HeaderConnecter />
+      <SeasonMenuConnecter />
       <FoodPage />
     </div>
   </Provider>

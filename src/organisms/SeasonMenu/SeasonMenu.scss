@@ -17,6 +17,17 @@ $season-menu-padding: 1.5rem;
   overflow-y: scroll;
   transform: translateX(-110%);
   transition: transform 0.3s;
+  z-index: 1;
+  @include mq($from: tablet) {
+    z-index: 0;
+    min-width: 200px;
+    position: static;
+    top: auto;
+    left: auto;
+    transform: translateX(0);
+    height: 100%;
+    box-shadow: none;
+  }
 }
 
   .c-season-menu--is-open {
@@ -31,6 +42,7 @@ $season-menu-padding: 1.5rem;
     width: 100%;
     height: 100%;
     background-color: transparentize(#000000, 0.5);
+    z-index: 1;
   }
 
   .c-season-menu__button {
@@ -60,4 +72,7 @@ $season-menu-padding: 1.5rem;
     height: 24px;
     display: flex;
     padding: 0;
+    @include mq($from: tablet) {
+      display: none;
+    }
   }

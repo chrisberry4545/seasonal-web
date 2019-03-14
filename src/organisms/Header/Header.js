@@ -8,10 +8,6 @@ import {
   TextHeadingLarge
 } from '../../elements';
 
-import {
-  SeasonMenuConnecter
-} from '../SeasonMenu/SeasonMenu.connector';
-
 export const Header = ({
   onMenuOpen
 }) => (
@@ -24,6 +20,5 @@ export const Header = ({
         Eat Seasonal
       </TextHeadingLarge>
     </h1>
-    <SeasonMenuConnecter key='season-menu' />
   </header>
 );
