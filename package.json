@@ -27,7 +27,9 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && npm run copy-cname && npm run copy-circleci",
+    "copy-cname": "cp CNAME ./build",
+    "copy-circleci": "cp -r .circleci ./build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "gh-pages": "node ./release/gh-pages.js"
