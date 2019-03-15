@@ -1,5 +1,10 @@
 import { createSelector } from 'reselect';
-import { State, HydratedSeason, Food } from '../../interfaces';
+import {
+  State,
+  HydratedSeason,
+  Food,
+  Recipe
+} from '../../interfaces';
 
 const selectCurrentSeasonDataState = (state: State) => state.currentSeasonData;
 
@@ -16,6 +21,12 @@ export const selectCurrentSeason = createSelector(
 export const selectCurrentSeasonFood = createSelector(
   selectCurrentSeason,
   (currentSeason): Food[] | undefined => currentSeason && currentSeason.food
+);
+
+export const selectCurrentSeasonRecipes = createSelector(
+  selectCurrentSeason,
+  (currentSeason): Recipe[] | undefined => currentSeason &&
+    currentSeason.recipes
 );
 
 export const selectCurrentSeasonIndex = createSelector(

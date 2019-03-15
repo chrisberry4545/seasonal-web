@@ -12,12 +12,16 @@ import {
 import { FoodTableProps } from './FoodTable.interface';
 
 export const FoodTable = ({
+  isCurrentTabFood,
   isLoading,
-  food
+  food,
+  recipes
 }: FoodTableProps) => (
   isLoading
     ? <div className='c-food-table__loading-spinner-wrapper'>
       <LoadingSpinner />
     </div>
-    : <ImageGrid data={food} />
+    : isCurrentTabFood
+      ? <ImageGrid data={food} />
+      : <ImageGrid data={recipes} />
 );

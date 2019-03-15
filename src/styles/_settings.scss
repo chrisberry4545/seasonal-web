@@ -1,11 +1,2 @@
-$background-color: #FFFFFF;
-$loading-spinner-color: #D0D3D4;
-$grey-med: #d1cdcd;
-$black-color: #000000;
-
-$mq-breakpoints: (
-    mobile:  320px,
-    tablet:  700px,
-    desktop: 1050px
-);
-
+@import './settings/settings.breakpoints';
+@import './settings/settings.colors';

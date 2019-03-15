@@ -1,6 +1,7 @@
 import React from 'react';
 
 import {
+  BottomTabsConnecter,
   SeasonMenuConnecter,
   HeaderConnecter
 } from '../organisms';
@@ -19,6 +20,7 @@ export const App = () => (
       <HeaderConnecter />
       <SeasonMenuConnecter />
       <FoodPage />
+      <BottomTabsConnecter />
     </div>
   </Provider>
 );

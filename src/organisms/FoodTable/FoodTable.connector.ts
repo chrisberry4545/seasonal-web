@@ -4,7 +4,9 @@ import {
 } from './FoodTable';
 import {
   selectIsCurrentSeasonLoading,
-  selectCurrentSeasonFood
+  selectCurrentSeasonFood,
+  selectCurrentSeasonRecipes,
+  selectIsCurrentTabFood
 } from '../../store';
 import { State } from '../../interfaces';
 import { FoodTableInputProps } from './FoodTable.interface';
@@ -13,8 +15,10 @@ const mapStateToProps = (
   state: State
 ): FoodTableInputProps => {
   return {
+    isCurrentTabFood: selectIsCurrentTabFood(state),
     isLoading: selectIsCurrentSeasonLoading(state),
-    food: selectCurrentSeasonFood(state)
+    food: selectCurrentSeasonFood(state),
+    recipes: selectCurrentSeasonRecipes(state)
   }
 }
 

@@ -1,12 +1,16 @@
 import {
   CLOSE_MENU,
   OPEN_MENU,
-  SELECT_SEASON
+  SELECT_SEASON,
+  GO_TO_FOOD_TAB,
+  GO_TO_RECIPES_TABS
 } from '../actions';
 import { UiState } from '../../interfaces';
 import { Action } from 'redux';
+import { TABS } from '../../const';
 
 const getDefaultState = (): UiState => ({
+  currentTab: TABS.FOOD,
   isMenuOpen: false
 });
 
@@ -25,6 +29,16 @@ export function uiReducer(
       return {
         ...state,
         isMenuOpen: true
+      };
+    case GO_TO_FOOD_TAB:
+      return {
+        ...state,
+        currentTab: TABS.FOOD
+      };
+    case GO_TO_RECIPES_TABS:
+      return {
+        ...state,
+        currentTab: TABS.RECIPES
       };
     default:
       return state
