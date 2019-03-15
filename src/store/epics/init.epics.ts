@@ -8,13 +8,13 @@ import {
 } from 'rxjs';
 
 import {
-  map
+  mapTo
 } from 'rxjs/operators';
 import { Action } from 'redux';
 import { SeasonalEpic } from './seasonal-epic.type';
 
-export const initAppEpic: SeasonalEpic = (): Observable<Action> => (
+export const initAppEpic$: SeasonalEpic = (): Observable<Action> => (
   of(null).pipe(
-    map(() => initApp()),
+    mapTo(initApp()),
   )
 );

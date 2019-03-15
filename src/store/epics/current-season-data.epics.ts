@@ -15,7 +15,8 @@ import {
 import {
   map,
   switchMap,
-  withLatestFrom
+  withLatestFrom,
+  mapTo
 } from 'rxjs/operators';
 import { Action } from 'redux';
 import { State } from '../../interfaces';
@@ -23,7 +24,7 @@ import { selectCurrentSeasonIndex } from '../selectors';
 import { Observable } from 'rxjs';
 import { SeasonalEpic } from './seasonal-epic.type';
 
-export const getCurrentSeasonDataStartEpic: SeasonalEpic = (
+export const getCurrentSeasonDataStartEpic$: SeasonalEpic = (
   actions$: ActionsObservable<Action>,
 ): Observable<Action> => (
   actions$.pipe(
@@ -31,11 +32,11 @@ export const getCurrentSeasonDataStartEpic: SeasonalEpic = (
       INIT_APP,
       SELECT_SEASON
     ),
-    map(() => setCurrentSeasonDataStart())
+    mapTo(setCurrentSeasonDataStart())
   )
 );
 
-export const getCurrentSeasonDataEpic: SeasonalEpic = (
+export const getCurrentSeasonDataEpic$: SeasonalEpic = (
   actions$: ActionsObservable<Action>,
   state$: StateObservable<State>,
 ): Observable<Action> => (

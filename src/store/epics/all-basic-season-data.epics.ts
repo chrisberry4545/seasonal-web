@@ -13,22 +13,23 @@ import {
 
 import {
   map,
-  switchMap
+  switchMap,
+  mapTo
 } from 'rxjs/operators';
 import { Action } from 'redux';
 import { Observable } from 'rxjs';
 import { SeasonalEpic } from './seasonal-epic.type';
 
-export const getAllBasicSeasonDataStartEpic: SeasonalEpic = (
+export const getAllBasicSeasonDataStartEpic$: SeasonalEpic = (
   actions$: ActionsObservable<Action>,
 ): Observable<Action> => (
   actions$.pipe(
     ofType(INIT_APP),
-    map(() => setAllBasicSeasonDataStart())
+    mapTo(setAllBasicSeasonDataStart())
   )
 );
 
-export const getAllBasicSeasonDataEpic: SeasonalEpic = (
+export const getAllBasicSeasonDataEpic$: SeasonalEpic = (
   actions$: ActionsObservable<Action>,
 ): Observable<Action> => (
   actions$.pipe(
