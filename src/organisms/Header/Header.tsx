@@ -7,6 +7,9 @@ import {
   BurgerIcon,
   TextHeadingLarge
 } from '../../elements';
+import {
+  SearchBarConnecter
+} from '../';
 import { HeaderProps } from './Header.interface';
 
 export const Header: SFC<HeaderProps> = ({
@@ -21,5 +24,6 @@ export const Header: SFC<HeaderProps> = ({
         Eat Seasonal
       </TextHeadingLarge>
     </h1>
+    <SearchBarConnecter />
   </header>
 );

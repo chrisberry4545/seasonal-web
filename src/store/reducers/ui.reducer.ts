@@ -3,7 +3,9 @@ import {
   OPEN_MENU,
   SELECT_SEASON,
   GO_TO_FOOD_TAB,
-  GO_TO_RECIPES_TABS
+  GO_TO_RECIPES_TABS,
+  SEARCH_BAR_CHANGED,
+  SearchBarChanged
 } from '../actions';
 import { UiState } from '../../interfaces';
 import { Action } from 'redux';
@@ -39,6 +41,11 @@ export function uiReducer(
       return {
         ...state,
         currentTab: TABS.RECIPES
+      };
+    case SEARCH_BAR_CHANGED:
+      return {
+        ...state,
+        searchTerm: (action as SearchBarChanged).newSearchTerm
       };
     default:
       return state

@@ -5,4 +5,5 @@ import {
 export interface UiState {
   currentTab: TABS;
   isMenuOpen: boolean;
+  searchTerm?: string;
 }

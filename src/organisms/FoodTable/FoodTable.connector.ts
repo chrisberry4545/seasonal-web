@@ -4,8 +4,8 @@ import {
 } from './FoodTable';
 import {
   selectIsCurrentSeasonLoading,
-  selectCurrentSeasonFood,
-  selectCurrentSeasonRecipes,
+  selectVisibleFoodData,
+  selectVisibleRecipeData,
   selectIsCurrentTabFood
 } from '../../store';
 import { State } from '../../interfaces';
@@ -17,8 +17,8 @@ const mapStateToProps = (
   return {
     isCurrentTabFood: selectIsCurrentTabFood(state),
     isLoading: selectIsCurrentSeasonLoading(state),
-    food: selectCurrentSeasonFood(state),
-    recipes: selectCurrentSeasonRecipes(state)
+    food: selectVisibleFoodData(state),
+    recipes: selectVisibleRecipeData(state)
   }
 }
 

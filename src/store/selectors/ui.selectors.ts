@@ -11,15 +11,21 @@ export const selectIsMenuOpen = createSelector(
 
 export const selectCurrentTab = createSelector(
   selectUiState,
-  (uiState) => uiState.currentTab
+  (uiState): TABS => uiState.currentTab
 );
 
 export const selectIsCurrentTabFood = createSelector(
   selectCurrentTab,
-  (currentTab) => currentTab === TABS.FOOD
+  (currentTab): boolean => currentTab === TABS.FOOD
 );
 
 export const selectIsCurrentTabRecipes = createSelector(
   selectCurrentTab,
-  (currentTab) => currentTab === TABS.RECIPES
+  (currentTab): boolean => currentTab === TABS.RECIPES
+);
+
+export const selectCurrentSearchTerm = createSelector(
+  selectUiState,
+  (uiState): string | undefined => uiState.searchTerm &&
+    uiState.searchTerm.toLowerCase()
 );

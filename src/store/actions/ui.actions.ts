@@ -40,3 +40,16 @@ export function goToRecipesTab(): Action {
     type: GO_TO_RECIPES_TABS
   };
 }
+
+export interface SearchBarChanged extends Action {
+  newSearchTerm: string;
+}
+export const SEARCH_BAR_CHANGED = 'SEARCH_BAR_CHANGED';
+export function searchBarChanged(
+  newSearchTerm: string,
+): SearchBarChanged {
+  return {
+    newSearchTerm,
+    type: SEARCH_BAR_CHANGED,
+  };
+}
