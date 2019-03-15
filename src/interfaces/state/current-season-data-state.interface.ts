@@ -1,6 +1,6 @@
 import {
   HydratedSeason
-} from '../backend-data';
+} from '@chrisb-dev/seasonal-shared';
 
 export interface CurrentSeasonDataState {
   currentSeasonIndex: number;

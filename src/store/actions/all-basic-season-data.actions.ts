@@ -1,5 +1,5 @@
 import { Action } from 'redux';
-import { Season } from '../../interfaces';
+import { BaseSeason } from '@chrisb-dev/seasonal-shared';
 
 export const SET_ALL_BASIC_SEASON_DATA_START =
   'SET_ALL_BASIC_SEASON_DATA_START';
@@ -10,12 +10,12 @@ export function setAllBasicSeasonDataStart(): Action {
 }
 
 export interface SetAllBasicSeasonDataSuccess extends Action {
-  seasonData: Season[];
+  seasonData: BaseSeason[];
 }
 export const SET_ALL_BASIC_SEASON_DATA_SUCCESS =
   'SET_ALL_BASIC_SEASON_DATA_SUCCESS';
 export function setAllBasicSeasonDataSuccess(
-  seasonData: Season[]
+  seasonData: BaseSeason[]
 ): SetAllBasicSeasonDataSuccess {
   return {
     seasonData,

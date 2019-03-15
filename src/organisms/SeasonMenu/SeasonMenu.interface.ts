@@ -1,7 +1,7 @@
-import { Season } from '../../interfaces';
+import { HydratedSeason } from '@chrisb-dev/seasonal-shared';
 
 export interface SeasonMenuInputProps {
-  allBasicSeasonData: Season[] | undefined;
+  allBasicSeasonData: HydratedSeason[] | undefined;
   currentSeasonIndex: number;
   isLoading: boolean;
   isMenuOpen: boolean;

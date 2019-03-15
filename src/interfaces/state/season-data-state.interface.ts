@@ -1,6 +1,6 @@
-import { Season } from '../backend-data';
+import { BaseSeason } from '@chrisb-dev/seasonal-shared';
 
 export interface SeasonDataState {
   isLoading: boolean;
-  data?: Season[];
+  data?: BaseSeason[];
 }

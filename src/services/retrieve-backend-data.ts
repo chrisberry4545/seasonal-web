@@ -1,9 +1,9 @@
 import {
     SEASON_DATA_URL
 } from '././../config';
-import { Season, HydratedSeason } from '../interfaces';
+import { BaseSeason, HydratedSeason } from '@chrisb-dev/seasonal-shared';
 
-const getAllSeasonData = (): Promise<Season[]> => {
+const getAllSeasonData = (): Promise<BaseSeason[]> => {
   return fetch(SEASON_DATA_URL).then((resp) => resp.json());
 };
 

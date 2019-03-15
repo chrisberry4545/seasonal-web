@@ -1,6 +1,7 @@
 
 import { createSelector } from 'reselect';
-import { State, Season } from '../../interfaces';
+import { State } from '../../interfaces';
+import { BaseSeason } from '@chrisb-dev/seasonal-shared';
 
 const selectAllBasicSeasonDataState = (
   state: State
@@ -13,5 +14,5 @@ export const selectIsBasicSeasonDataLoading = createSelector(
 
 export const selectAllBasicSeasonData = createSelector(
   selectAllBasicSeasonDataState,
-  (allBasicSeasonData): Season[] | undefined => allBasicSeasonData.data
+  (allBasicSeasonData): BaseSeason[] | undefined => allBasicSeasonData.data
 );

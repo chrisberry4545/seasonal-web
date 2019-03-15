@@ -1,10 +1,12 @@
 import { createSelector } from 'reselect';
 import {
-  State,
+  State
+} from '../../interfaces';
+import {
   HydratedSeason,
   Food,
   Recipe
-} from '../../interfaces';
+} from '@chrisb-dev/seasonal-shared';
 
 const selectCurrentSeasonDataState = (state: State) => state.currentSeasonData;
 

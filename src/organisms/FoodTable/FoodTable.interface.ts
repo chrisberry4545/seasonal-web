@@ -1,4 +1,4 @@
-import { Food, Recipe } from '../../interfaces';
+import { Food, Recipe } from '@chrisb-dev/seasonal-shared';
 
 export interface FoodTableInputProps {
   isCurrentTabFood: boolean;

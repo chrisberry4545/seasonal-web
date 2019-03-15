@@ -1,4 +1,4 @@
-import { HydratedSeason } from '../../interfaces';
+import { HydratedSeason } from '@chrisb-dev/seasonal-shared';
 import { Action } from 'redux';
 
 export const SET_CURRENT_SEASON_DATA_START = 'SET_CURRENT_SEASON_DATA_START';
