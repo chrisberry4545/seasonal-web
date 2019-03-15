@@ -2,7 +2,7 @@
   "name": "seasonal-web",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://chrisberry4545.github.io/seasonal-web/",
+  "homepage": "https://chrisberry4545.github.io/",
   "dependencies": {
     "@types/jest": "^24.0.11",
     "@types/node": "^11.11.3",
