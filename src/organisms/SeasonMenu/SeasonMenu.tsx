@@ -13,7 +13,7 @@ import {
   fadeInOutAnimation
 } from '../../helpers';
 import { PoseGroup } from 'react-pose';
-import { SeasonMenuProps } from './SeasonMenu.interface';
+import { ISeasonMenuProps } from './SeasonMenu.interface';
 
 const OverlayFadeInOutAnimation = fadeInOutAnimation();
 
@@ -24,7 +24,7 @@ export const SeasonMenu = ({
   isMenuOpen,
   onSeasonSelected,
   onClose
-}: SeasonMenuProps) => (
+}: ISeasonMenuProps) => (
   <div>
     <PoseGroup>
       {

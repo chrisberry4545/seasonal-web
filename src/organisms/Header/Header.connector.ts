@@ -5,14 +5,14 @@ import {
 import {
   openMenu
 } from '../../store';
-import { HeaderDispatchProps } from './Header.interface';
+import { IHeaderDispatchProps } from './Header.interface';
 import { Dispatch } from 'redux';
 
 const mapStateToProps = () => ({});
 
 const mapDispatchToProps = (
   dispatch: Dispatch
-): HeaderDispatchProps => ({
+): IHeaderDispatchProps => ({
   onMenuOpen: () => dispatch(openMenu())
 });
 

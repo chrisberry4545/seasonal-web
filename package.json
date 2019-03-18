@@ -4,7 +4,7 @@
   "private": true,
   "homepage": "https://chrisberry4545.github.io/",
   "dependencies": {
-    "@chrisb-dev/seasonal-shared": "1.0.1",
+    "@chrisb-dev/seasonal-shared": "1.1.0",
     "@types/google.analytics": "^0.0.39",
     "@types/jest": "^24.0.11",
     "@types/node": "^11.11.3",
@@ -32,7 +32,8 @@
     "copy-circleci": "cp -r .circleci ./build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "gh-pages": "node ./release/gh-pages.js"
+    "gh-pages": "node ./release/gh-pages.js",
+    "lint": "tslint -c tslint.json 'src/**/*.ts{,x}'"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -44,6 +45,12 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "gh-pages": "^2.0.1"
-  }
+    "@chrisb-dev/tslint": "^1.0.1",
+    "gh-pages": "^2.0.1",
+    "pre-commit": "^1.2.2",
+    "tslint": "^5.14.0"
+  },
+  "pre-commit": [
+    "lint"
+  ]
 }

@@ -1,23 +1,23 @@
-import { HydratedSeason } from '@chrisb-dev/seasonal-shared';
+import { IHydratedSeason } from '@chrisb-dev/seasonal-shared';
 import { Action } from 'redux';
 
 export const SET_CURRENT_SEASON_DATA_START = 'SET_CURRENT_SEASON_DATA_START';
 export function setCurrentSeasonDataStart(): Action {
   return {
-    type: SET_CURRENT_SEASON_DATA_START,
-  }
+    type: SET_CURRENT_SEASON_DATA_START
+  };
 }
 
-export interface SetCurrentSeasonDataSuccess extends Action {
-  currentSeasonData: HydratedSeason;
+export interface ISetCurrentSeasonDataSuccess extends Action {
+  currentSeasonData: IHydratedSeason;
 }
 export const SET_CURRENT_SEASON_DATA_SUCCESS =
   'SET_CURRENT_SEASON_DATA_SUCCESS';
 export function setCurrentSeasonDataSuccess(
-  currentSeasonData: HydratedSeason
-): SetCurrentSeasonDataSuccess {
+  currentSeasonData: IHydratedSeason
+): ISetCurrentSeasonDataSuccess {
   return {
     currentSeasonData,
-    type: SET_CURRENT_SEASON_DATA_SUCCESS,
-  }
+    type: SET_CURRENT_SEASON_DATA_SUCCESS
+  };
 }

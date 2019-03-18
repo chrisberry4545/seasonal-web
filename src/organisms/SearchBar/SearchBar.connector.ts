@@ -5,14 +5,14 @@ import {
 import {
   searchBarChanged
 } from '../../store';
-import { SearchBarDispatchProps } from './SearchBar.interface';
+import { ISearchBarDispatchProps } from './SearchBar.interface';
 import { Dispatch } from 'redux';
 
 const mapStateToProps = () => ({});
 
 const mapDispatchToProps = (
   dispatch: Dispatch
-): SearchBarDispatchProps => ({
+): ISearchBarDispatchProps => ({
   onSearchChanged: (newSearchTerm: string) => (
     dispatch((searchBarChanged(newSearchTerm)))
   )

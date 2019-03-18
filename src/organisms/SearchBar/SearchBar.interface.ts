@@ -1,5 +1,3 @@
-export interface SearchBarDispatchProps {
+export interface ISearchBarDispatchProps {
   onSearchChanged: (newSearchTerm: string) => void;
 }
-
-export interface SearchBarProps extends SearchBarDispatchProps {}

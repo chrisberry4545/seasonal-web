@@ -9,22 +9,22 @@ import {
   selectIsCurrentTabRecipes
 } from '../../store';
 import {
-  BottomTabDispatchProps,
-  BottomTabInputProps
+  IBottomTabDispatchProps,
+  IBottomTabInputProps
 } from './BottomTabs.interface';
 import { Dispatch } from 'redux';
-import { State } from '../../interfaces';
+import { IState } from '../../interfaces';
 
 const mapStateToProps = (
-  state: State
-): BottomTabInputProps => ({
+  state: IState
+): IBottomTabInputProps => ({
   isCurrentTabFood: selectIsCurrentTabFood(state),
   isCurrentTabRecipes: selectIsCurrentTabRecipes(state)
 });
 
 const mapDispatchToProps = (
   dispatch: Dispatch
-): BottomTabDispatchProps => ({
+): IBottomTabDispatchProps => ({
   goToFoodTab: () => dispatch(goToFoodTab()),
   goToRecipesTab: () => dispatch(goToRecipesTab())
 });

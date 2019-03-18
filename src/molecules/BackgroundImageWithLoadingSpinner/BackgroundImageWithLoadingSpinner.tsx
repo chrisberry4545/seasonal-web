@@ -18,33 +18,33 @@ import { PoseGroup } from 'react-pose';
 
 const FadeInOutAnimation = fadeInOutAnimation();
 
-interface BackgroundImageWithLoadingSpinnerPropsInterface {
+interface IBackgroundImageWithLoadingSpinnerPropsInterface {
   src: string;
 }
-interface BackgroundImageWithLoadingSpinnerStateInterface {
+interface IBackgroundImageWithLoadingSpinnerStateInterface {
   isVisible: boolean;
 }
 
 export class BackgroundImageWithLoadingSpinner
 extends Component<
-  BackgroundImageWithLoadingSpinnerPropsInterface,
-  BackgroundImageWithLoadingSpinnerStateInterface
+  IBackgroundImageWithLoadingSpinnerPropsInterface,
+  IBackgroundImageWithLoadingSpinnerStateInterface
 > {
-  constructor (props: BackgroundImageWithLoadingSpinnerPropsInterface) {
+  constructor(props: IBackgroundImageWithLoadingSpinnerPropsInterface) {
     super(props);
     this.state = {
       isVisible: false
     };
   }
 
-  async componentDidMount () {
+  public async componentDidMount() {
     await loadImage(this.props.src);
     this.setState({
       isVisible: true
     });
   }
 
-  render () {
+  public render() {
     return (
       <PoseGroup>
         {

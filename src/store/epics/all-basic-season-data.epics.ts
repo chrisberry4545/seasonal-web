@@ -21,7 +21,7 @@ import { Observable } from 'rxjs';
 import { SeasonalEpic } from './seasonal-epic.type';
 
 export const getAllBasicSeasonDataStartEpic$: SeasonalEpic = (
-  actions$: ActionsObservable<Action>,
+  actions$: ActionsObservable<Action>
 ): Observable<Action> => (
   actions$.pipe(
     ofType(INIT_APP),
@@ -30,7 +30,7 @@ export const getAllBasicSeasonDataStartEpic$: SeasonalEpic = (
 );
 
 export const getAllBasicSeasonDataEpic$: SeasonalEpic = (
-  actions$: ActionsObservable<Action>,
+  actions$: ActionsObservable<Action>
 ): Observable<Action> => (
   actions$.pipe(
     ofType(SET_ALL_BASIC_SEASON_DATA_START),

@@ -2,7 +2,7 @@
 import { createSelector } from 'reselect';
 import { selectCurrentSearchTerm } from '../ui.selectors';
 import { selectCurrentSeasonFood, selectCurrentSeasonRecipes } from '../current-season-data.selectors';
-import { Food, Recipe } from '@chrisb-dev/seasonal-shared';
+import { IFood, IRecipe } from '@chrisb-dev/seasonal-shared';
 
 const getDataThatContainsSearchTerm = <T extends { name: string }>(
   searchTerm: string | undefined,
@@ -14,7 +14,7 @@ const getDataThatContainsSearchTerm = <T extends { name: string }>(
 export const selectVisibleFoodData = createSelector(
   selectCurrentSearchTerm,
   selectCurrentSeasonFood,
-  (searchTerm, food): Food[] | undefined => getDataThatContainsSearchTerm(
+  (searchTerm, food): IFood[] | undefined => getDataThatContainsSearchTerm(
     searchTerm,
     food
   )
@@ -23,7 +23,7 @@ export const selectVisibleFoodData = createSelector(
 export const selectVisibleRecipeData = createSelector(
   selectCurrentSearchTerm,
   selectCurrentSeasonRecipes,
-  (searchTerm, recipes): Recipe[] | undefined => getDataThatContainsSearchTerm(
+  (searchTerm, recipes): IRecipe[] | undefined => getDataThatContainsSearchTerm(
     searchTerm,
     recipes
   )

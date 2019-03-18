@@ -1,12 +1,12 @@
-export interface BottomTabInputProps {
+export interface IBottomTabInputProps {
   isCurrentTabFood: boolean;
   isCurrentTabRecipes: boolean;
 }
 
-export interface BottomTabDispatchProps {
+export interface IBottomTabDispatchProps {
   goToFoodTab: () => void;
   goToRecipesTab: () => void;
 }
 
-export interface BottomTabProps
-  extends BottomTabInputProps, BottomTabDispatchProps {}
+export interface IBottomTabProps
+  extends IBottomTabInputProps, IBottomTabDispatchProps {}

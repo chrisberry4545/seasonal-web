@@ -1,9 +1,9 @@
 import {
-  HydratedSeason
+  IHydratedSeason
 } from '@chrisb-dev/seasonal-shared';
 
-export interface CurrentSeasonDataState {
+export interface ICurrentSeasonDataState {
   currentSeasonIndex: number;
   isLoading: boolean;
-  data?: HydratedSeason;
+  data?: IHydratedSeason;
 }

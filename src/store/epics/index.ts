@@ -2,7 +2,7 @@ import { combineEpics } from 'redux-observable';
 
 import {
   getCurrentSeasonDataStartEpic$,
-  getCurrentSeasonDataEpic$,
+  getCurrentSeasonDataEpic$
 } from './current-season-data.epics';
 
 import { initAppEpic$ } from './init.epics';

@@ -5,13 +5,13 @@ import {
   GO_TO_FOOD_TAB,
   GO_TO_RECIPES_TABS,
   SEARCH_BAR_CHANGED,
-  SearchBarChanged
+  ISearchBarChanged
 } from '../actions';
-import { UiState } from '../../interfaces';
+import { IUiState } from '../../interfaces';
 import { Action } from 'redux';
 import { TABS } from '../../const';
 
-const getDefaultState = (): UiState => ({
+const getDefaultState = (): IUiState => ({
   currentTab: TABS.FOOD,
   isMenuOpen: false
 });
@@ -19,7 +19,7 @@ const getDefaultState = (): UiState => ({
 export function uiReducer(
   state = getDefaultState(),
   action: Action
-): UiState {
+): IUiState {
   switch (action.type) {
     case SELECT_SEASON:
     case CLOSE_MENU:
@@ -45,9 +45,9 @@ export function uiReducer(
     case SEARCH_BAR_CHANGED:
       return {
         ...state,
-        searchTerm: (action as SearchBarChanged).newSearchTerm
+        searchTerm: (action as ISearchBarChanged).newSearchTerm
       };
     default:
-      return state
+      return state;
   }
 }

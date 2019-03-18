@@ -2,12 +2,12 @@ import React, { SFC } from 'react';
 
 import './SearchBar.scss';
 
-import { SearchBarProps } from './SearchBar.interface';
+import { ISearchBarDispatchProps } from './SearchBar.interface';
 import {
   Input
 } from '../../elements';
 
-export const SearchBar: SFC<SearchBarProps> = ({
+export const SearchBar: SFC<ISearchBarDispatchProps> = ({
   onSearchChanged
 }) => (
   <Input className='c-search-bar'

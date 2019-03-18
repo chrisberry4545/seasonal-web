@@ -11,11 +11,11 @@ const createImageOnLoadPromise = (
       resolve(image);
     });
   });
-}
+};
 
 export const loadImage = (
   imageSrc: string
 ): Promise<HTMLImageElement> => {
   const onLoadPromise = createImageOnLoadPromise(imageSrc);
   return onLoadPromise;
-}
+};

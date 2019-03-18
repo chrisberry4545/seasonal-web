@@ -1,16 +1,16 @@
-import { HydratedSeason } from '@chrisb-dev/seasonal-shared';
+import { IHydratedSeason } from '@chrisb-dev/seasonal-shared';
 
-export interface SeasonMenuInputProps {
-  allBasicSeasonData: HydratedSeason[] | undefined;
+export interface ISeasonMenuInputProps {
+  allBasicSeasonData: IHydratedSeason[] | undefined;
   currentSeasonIndex: number;
   isLoading: boolean;
   isMenuOpen: boolean;
 }
 
-export interface SeasonMenuDispatchProps {
+export interface ISeasonMenuDispatchProps {
   onClose: () => void;
   onSeasonSelected: (seasonIndex: number) => void;
 }
 
-export interface SeasonMenuProps
-  extends SeasonMenuDispatchProps, SeasonMenuInputProps {}
+export interface ISeasonMenuProps
+  extends ISeasonMenuDispatchProps, ISeasonMenuInputProps {}

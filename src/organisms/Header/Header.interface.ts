@@ -1,5 +1,3 @@
-export interface HeaderDispatchProps {
+export interface IHeaderDispatchProps {
   onMenuOpen: () => void;
 }
-
-export interface HeaderProps extends HeaderDispatchProps {}

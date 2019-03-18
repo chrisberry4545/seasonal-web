@@ -11,16 +11,16 @@ import {
   selectCurrentSeasonIndex
 } from '../../store';
 
-import { State } from '../../interfaces';
+import { IState } from '../../interfaces';
 import {
-  SeasonMenuInputProps,
-  SeasonMenuDispatchProps
+  ISeasonMenuInputProps,
+  ISeasonMenuDispatchProps
 } from './SeasonMenu.interface';
 import { Dispatch } from 'redux';
 
 const mapStateToProps = (
-  state: State
-): SeasonMenuInputProps => ({
+  state: IState
+): ISeasonMenuInputProps => ({
   allBasicSeasonData: selectAllBasicSeasonData(state),
   currentSeasonIndex: selectCurrentSeasonIndex(state),
   isLoading: selectIsBasicSeasonDataLoading(state),
@@ -29,7 +29,7 @@ const mapStateToProps = (
 
 const mapDispatchToProps = (
   dispatch: Dispatch
-): SeasonMenuDispatchProps => ({
+): ISeasonMenuDispatchProps => ({
   onClose: () => dispatch(closeMenu()),
   onSeasonSelected: (seasonIndex: number) => dispatch(selectSeason(seasonIndex))
 });

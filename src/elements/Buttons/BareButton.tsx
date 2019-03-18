@@ -3,7 +3,7 @@ import './BareButton.scss';
 
 export const BareButton: SFC<{
   className?: string,
-  onClick?: () => void,
+  onClick?: () => void
 }> = ({
   className,
   children,

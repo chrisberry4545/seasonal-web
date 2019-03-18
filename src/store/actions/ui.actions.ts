@@ -14,13 +14,13 @@ export function closeMenu(): Action {
   };
 }
 
-export interface SelectSeason extends Action {
+export interface ISelectSeason extends Action {
   seasonIndex: number;
 }
 export const SELECT_SEASON = 'SELECT_SEASON';
 export function selectSeason(
-  seasonIndex: number,
-): SelectSeason {
+  seasonIndex: number
+): ISelectSeason {
   return {
     seasonIndex,
     type: SELECT_SEASON
@@ -41,15 +41,15 @@ export function goToRecipesTab(): Action {
   };
 }
 
-export interface SearchBarChanged extends Action {
+export interface ISearchBarChanged extends Action {
   newSearchTerm: string;
 }
 export const SEARCH_BAR_CHANGED = 'SEARCH_BAR_CHANGED';
 export function searchBarChanged(
-  newSearchTerm: string,
-): SearchBarChanged {
+  newSearchTerm: string
+): ISearchBarChanged {
   return {
     newSearchTerm,
-    type: SEARCH_BAR_CHANGED,
+    type: SEARCH_BAR_CHANGED
   };
 }

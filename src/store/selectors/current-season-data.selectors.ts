@@ -1,14 +1,14 @@
 import { createSelector } from 'reselect';
 import {
-  State
+  IState
 } from '../../interfaces';
 import {
-  HydratedSeason,
-  Food,
-  Recipe
+  IHydratedSeason,
+  IFood,
+  IRecipe
 } from '@chrisb-dev/seasonal-shared';
 
-const selectCurrentSeasonDataState = (state: State) => state.currentSeasonData;
+const selectCurrentSeasonDataState = (state: IState) => state.currentSeasonData;
 
 export const selectIsCurrentSeasonLoading = createSelector(
   selectCurrentSeasonDataState,
@@ -17,21 +17,21 @@ export const selectIsCurrentSeasonLoading = createSelector(
 
 export const selectCurrentSeason = createSelector(
   selectCurrentSeasonDataState,
-  (currentSeasonData): HydratedSeason | undefined => currentSeasonData.data
+  (currentSeasonData): IHydratedSeason | undefined => currentSeasonData.data
 );
 
 export const selectCurrentSeasonFood = createSelector(
   selectCurrentSeason,
-  (currentSeason): Food[] | undefined => currentSeason && currentSeason.food
+  (currentSeason): IFood[] | undefined => currentSeason && currentSeason.food
 );
 
 export const selectCurrentSeasonRecipes = createSelector(
   selectCurrentSeason,
-  (currentSeason): Recipe[] | undefined => currentSeason &&
+  (currentSeason): IRecipe[] | undefined => currentSeason &&
     currentSeason.recipes
 );
 
 export const selectCurrentSeasonIndex = createSelector(
   selectCurrentSeasonDataState,
-  (currentSeasonData) => currentSeasonData.currentSeasonIndex,
+  (currentSeasonData) => currentSeasonData.currentSeasonIndex
 );

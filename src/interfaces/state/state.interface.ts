@@ -1,9 +1,9 @@
-import { UiState } from './ui-state.interface';
-import { SeasonDataState } from './season-data-state.interface';
-import { CurrentSeasonDataState } from './current-season-data-state.interface';
+import { IUiState } from './ui-state.interface';
+import { ISeasonDataState } from './season-data-state.interface';
+import { ICurrentSeasonDataState } from './current-season-data-state.interface';
 
-export interface State {
-  allBasicSeasonData: SeasonDataState;
-  currentSeasonData: CurrentSeasonDataState;
-  ui: UiState;
+export interface IState {
+  allBasicSeasonData: ISeasonDataState;
+  currentSeasonData: ICurrentSeasonDataState;
+  ui: IUiState;
 }

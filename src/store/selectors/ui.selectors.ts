@@ -1,8 +1,8 @@
 import { createSelector } from 'reselect';
-import { State } from '../../interfaces';
+import { IState } from '../../interfaces';
 import { TABS } from '../../const';
 
-const selectUiState = (state: State) => state.ui;
+const selectUiState = (state: IState) => state.ui;
 
 export const selectIsMenuOpen = createSelector(
   selectUiState,

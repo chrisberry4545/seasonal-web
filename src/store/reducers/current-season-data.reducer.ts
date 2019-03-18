@@ -1,15 +1,15 @@
 import {
   SET_CURRENT_SEASON_DATA_START,
   SET_CURRENT_SEASON_DATA_SUCCESS,
-  SetCurrentSeasonDataSuccess,
+  ISetCurrentSeasonDataSuccess,
   SELECT_SEASON,
-  SelectSeason
+  ISelectSeason
 } from '../actions';
-import { CurrentSeasonDataState } from '../../interfaces';
+import { ICurrentSeasonDataState } from '../../interfaces';
 import { Action } from 'redux';
 import { getCurrentSeasonIndex } from '../../services';
 
-const getDefaultState = (): CurrentSeasonDataState => ({
+const getDefaultState = (): ICurrentSeasonDataState => ({
   currentSeasonIndex: getCurrentSeasonIndex(),
   data: undefined,
   isLoading: true
@@ -18,7 +18,7 @@ const getDefaultState = (): CurrentSeasonDataState => ({
 export function currentSeasonDataReducer(
   state = getDefaultState(),
   action: Action
-): CurrentSeasonDataState {
+): ICurrentSeasonDataState {
   switch (action.type) {
     case SET_CURRENT_SEASON_DATA_START:
       return {
@@ -28,15 +28,15 @@ export function currentSeasonDataReducer(
     case SET_CURRENT_SEASON_DATA_SUCCESS:
       return {
         ...state,
-        data: (action as SetCurrentSeasonDataSuccess).currentSeasonData,
+        data: (action as ISetCurrentSeasonDataSuccess).currentSeasonData,
         isLoading: false
       };
     case SELECT_SEASON:
       return {
         ...state,
-        currentSeasonIndex: (action as SelectSeason).seasonIndex,
+        currentSeasonIndex: (action as ISelectSeason).seasonIndex
       };
     default:
-      return state
+      return state;
   }
 }

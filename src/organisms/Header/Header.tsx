@@ -10,9 +10,9 @@ import {
 import {
   SearchBarConnecter
 } from '../';
-import { HeaderProps } from './Header.interface';
+import { IHeaderDispatchProps } from './Header.interface';
 
-export const Header: SFC<HeaderProps> = ({
+export const Header: SFC<IHeaderDispatchProps> = ({
   onMenuOpen
 }) => (
   <header className='c-header'>

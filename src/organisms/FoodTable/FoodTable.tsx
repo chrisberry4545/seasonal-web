@@ -9,14 +9,14 @@ import {
 import {
   LoadingSpinner
 } from '../../elements';
-import { FoodTableProps } from './FoodTable.interface';
+import { IFoodTableInputProps } from './FoodTable.interface';
 
 export const FoodTable = ({
   isCurrentTabFood,
   isLoading,
   food,
   recipes
-}: FoodTableProps) => (
+}: IFoodTableInputProps) => (
   isLoading
     ? <div className='c-food-table__loading-spinner-wrapper'>
       <LoadingSpinner />

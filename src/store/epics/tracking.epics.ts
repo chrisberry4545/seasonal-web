@@ -26,7 +26,7 @@ const ACTIONS_TO_TRACK = [
 ];
 
 export const trackActionEpic$: SeasonalEpic = (
-  actions$: ActionsObservable<Action>,
+  actions$: ActionsObservable<Action>
 ): Observable<Action> => (
   actions$.pipe(
     filter(({ type }) => ACTIONS_TO_TRACK.includes(type)),

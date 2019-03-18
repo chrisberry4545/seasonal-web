@@ -1,8 +1,8 @@
 import React, { SFC } from 'react';
 import './TextHeadingLarge.scss';
-import { TextInterface } from './Text.interface';
+import { ITextInterface } from './Text.interface';
 
-export const TextHeadingLarge: SFC<TextInterface> = ({
+export const TextHeadingLarge: SFC<ITextInterface> = ({
   className,
   children
 }) => (

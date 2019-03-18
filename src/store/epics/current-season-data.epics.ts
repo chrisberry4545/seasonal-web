@@ -19,13 +19,13 @@ import {
   mapTo
 } from 'rxjs/operators';
 import { Action } from 'redux';
-import { State } from '../../interfaces';
+import { IState } from '../../interfaces';
 import { selectCurrentSeasonIndex } from '../selectors';
 import { Observable } from 'rxjs';
 import { SeasonalEpic } from './seasonal-epic.type';
 
 export const getCurrentSeasonDataStartEpic$: SeasonalEpic = (
-  actions$: ActionsObservable<Action>,
+  actions$: ActionsObservable<Action>
 ): Observable<Action> => (
   actions$.pipe(
     ofType(
@@ -38,7 +38,7 @@ export const getCurrentSeasonDataStartEpic$: SeasonalEpic = (
 
 export const getCurrentSeasonDataEpic$: SeasonalEpic = (
   actions$: ActionsObservable<Action>,
-  state$: StateObservable<State>,
+  state$: StateObservable<IState>
 ): Observable<Action> => (
   actions$.pipe(
     ofType(SET_CURRENT_SEASON_DATA_START),

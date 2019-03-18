@@ -1,5 +1,5 @@
 import { Epic } from 'redux-observable';
 import { Action } from 'redux';
-import { State } from '../../interfaces';
+import { IState } from '../../interfaces';
 
-export type SeasonalEpic = Epic<Action, Action, State, {}>;
+export type SeasonalEpic = Epic<Action, Action, IState, {}>;

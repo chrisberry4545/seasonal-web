@@ -16,12 +16,12 @@ import {
   rootEpic
 } from '../epics';
 
-import { State } from '../../interfaces';
+import { IState } from '../../interfaces';
 
-const epicMiddleware = createEpicMiddleware<Action, Action, State, {}>();
+const epicMiddleware = createEpicMiddleware<Action, Action, IState, {}>();
 
 export const store = createStore(
-  combineReducers<State>({
+  combineReducers<IState>({
     allBasicSeasonData: allBasicSeasonDataReducer,
     currentSeasonData: currentSeasonDataReducer,
     ui: uiReducer

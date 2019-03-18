@@ -1,10 +1,8 @@
-import { Food, Recipe } from '@chrisb-dev/seasonal-shared';
+import { IFood, IRecipe } from '@chrisb-dev/seasonal-shared';
 
-export interface FoodTableInputProps {
+export interface IFoodTableInputProps {
   isCurrentTabFood: boolean;
-  food: Food[] | undefined;
-  recipes: Recipe[] | undefined;
+  food: IFood[] | undefined;
+  recipes: IRecipe[] | undefined;
   isLoading: boolean;
 }
-
-export interface FoodTableProps extends FoodTableInputProps {}

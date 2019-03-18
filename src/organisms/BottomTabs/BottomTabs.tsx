@@ -5,7 +5,7 @@ import './BottomTabs.scss';
 import {
   BareButton
 } from '../../elements';
-import { BottomTabProps } from './BottomTabs.interface';
+import { IBottomTabProps } from './BottomTabs.interface';
 
 const addTabClasses = (isSelected: boolean) => (
   `c-bottom-tabs__tab ${
@@ -15,7 +15,7 @@ const addTabClasses = (isSelected: boolean) => (
   }`
 );
 
-export const BottomTabs: SFC<BottomTabProps> = ({
+export const BottomTabs: SFC<IBottomTabProps> = ({
   isCurrentTabFood,
   isCurrentTabRecipes,
   goToFoodTab,

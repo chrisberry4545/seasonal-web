@@ -1,10 +1,10 @@
 
 import { createSelector } from 'reselect';
-import { State } from '../../interfaces';
-import { BaseSeason } from '@chrisb-dev/seasonal-shared';
+import { IState } from '../../interfaces';
+import { IBaseSeason } from '@chrisb-dev/seasonal-shared';
 
 const selectAllBasicSeasonDataState = (
-  state: State
+  state: IState
 ) => state.allBasicSeasonData;
 
 export const selectIsBasicSeasonDataLoading = createSelector(
@@ -14,5 +14,5 @@ export const selectIsBasicSeasonDataLoading = createSelector(
 
 export const selectAllBasicSeasonData = createSelector(
   selectAllBasicSeasonDataState,
-  (allBasicSeasonData): BaseSeason[] | undefined => allBasicSeasonData.data
+  (allBasicSeasonData): IBaseSeason[] | undefined => allBasicSeasonData.data
 );

@@ -15,6 +15,6 @@ import { SeasonalEpic } from './seasonal-epic.type';
 
 export const initAppEpic$: SeasonalEpic = (): Observable<Action> => (
   of(null).pipe(
-    mapTo(initApp()),
+    mapTo(initApp())
   )
 );

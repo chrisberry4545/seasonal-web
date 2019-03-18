@@ -1,6 +1,6 @@
-import { BaseSeason } from '@chrisb-dev/seasonal-shared';
+import { IBaseSeason } from '@chrisb-dev/seasonal-shared';
 
-export interface SeasonDataState {
+export interface ISeasonDataState {
   isLoading: boolean;
-  data?: BaseSeason[];
+  data?: IBaseSeason[];
 }
