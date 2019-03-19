@@ -5,7 +5,8 @@ import {
   OPEN_MENU,
   CLOSE_MENU,
   GO_TO_FOOD_TAB,
-  GO_TO_RECIPES_TABS
+  GO_TO_RECIPES_TABS,
+  GO_TO_WEB_VERSION
 } from '../actions';
 
 import {
@@ -22,7 +23,8 @@ const ACTIONS_TO_TRACK = [
   OPEN_MENU,
   CLOSE_MENU,
   GO_TO_FOOD_TAB,
-  GO_TO_RECIPES_TABS
+  GO_TO_RECIPES_TABS,
+  GO_TO_WEB_VERSION
 ];
 
 export const trackActionEpic$: SeasonalEpic = (

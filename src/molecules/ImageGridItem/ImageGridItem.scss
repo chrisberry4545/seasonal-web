@@ -20,7 +20,7 @@ $image-grid-item-margin: 0.9rem;
   }
 
   .c-image-grid-item__image {
-    border-radius: 8px;
+    border-radius: $default-border-radius;
     height: 120px;
     overflow: hidden;
   }

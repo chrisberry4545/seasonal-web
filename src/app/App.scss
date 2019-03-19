@@ -2,10 +2,5 @@
 @import '../styles/tools';
 
 .c-app {
-  margin-top: 3rem;
   padding-bottom: 5rem;
-  @include mq($from: tablet) {
-    display: flex;
-    margin-top: 4rem;
-  }
 }

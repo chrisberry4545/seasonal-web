@@ -6,7 +6,7 @@ import {
   ImageGridItem
 } from '../ImageGridItem/ImageGridItem';
 import { ImageGridProps } from './ImageGrid.interface';
-import { TextHeadingMedium } from '../../elements';
+import { TextMedium } from '../../elements';
 
 export const ImageGrid: SFC<ImageGridProps> = ({ data }) => (
   <div className='c-image-grid'>
@@ -18,9 +18,9 @@ export const ImageGrid: SFC<ImageGridProps> = ({ data }) => (
             imageUrlSmall={item.imageUrlSmall}
             name={item.name} />
         ))
-        : <TextHeadingMedium className='c-image-grid__no-results'>
+        : <TextMedium className='c-image-grid__no-results'>
             No results found
-          </TextHeadingMedium>
+          </TextMedium>
     }
   </div>
 );

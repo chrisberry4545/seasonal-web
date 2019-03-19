@@ -1,9 +1,19 @@
 import React from 'react';
 
+import './FoodPage.scss';
+
 import {
-  FoodTableConnecter
+  BottomTabsConnecter,
+  FoodTableConnecter,
+  HeaderConnecter,
+  SeasonMenuConnecter
 } from '../../organisms';
 
 export const FoodPage = () => (
-  <FoodTableConnecter />
+  <div className='c-food-page'>
+    <HeaderConnecter />
+    <SeasonMenuConnecter />
+    <FoodTableConnecter />
+    <BottomTabsConnecter />
+  </div>
 );
