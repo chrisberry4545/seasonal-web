@@ -4,6 +4,7 @@ import './FoodPage.scss';
 
 import {
   BottomTabsConnecter,
+  CurrentSeasonNameConnecter,
   FoodTableConnecter,
   HeaderConnecter,
   SeasonMenuConnecter
@@ -13,7 +14,10 @@ export const FoodPage = () => (
   <div className='c-food-page'>
     <HeaderConnecter />
     <SeasonMenuConnecter />
-    <FoodTableConnecter />
+    <div>
+      <CurrentSeasonNameConnecter />
+      <FoodTableConnecter />
+    </div>
     <BottomTabsConnecter />
   </div>
 );

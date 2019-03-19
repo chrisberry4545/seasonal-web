@@ -3,7 +3,7 @@ import React, { SFC } from 'react';
 import './WhyEatSeasonal.scss';
 
 import {
-  TextHeadingMedium
+  TextHeadingLarge
 } from '../../components-elements';
 
 import {
@@ -20,9 +20,9 @@ const summaryColumns: ISummaryColumnList = {
 export const WhyEatSeasonal: SFC<{}> = ({}) => (
   <div className='c-why-eat-seasonal'>
     <h2 className='c-why-eat-seasonal__heading'>
-      <TextHeadingMedium>
+      <TextHeadingLarge>
         Why Eat Seasonal?
-      </TextHeadingMedium>
+      </TextHeadingLarge>
     </h2>
     <SummaryColumnList {...summaryColumns} />
   </div>

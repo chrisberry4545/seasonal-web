@@ -35,3 +35,8 @@ export const selectCurrentSeasonIndex = createSelector(
   selectCurrentSeasonDataState,
   (currentSeasonData) => currentSeasonData.currentSeasonIndex
 );
+
+export const selectCurrentSeasonName = createSelector(
+  selectCurrentSeason,
+  (currentSeason): string | undefined => currentSeason && currentSeason.name
+);

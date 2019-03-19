@@ -3,16 +3,16 @@ import React, { SFC } from 'react';
 import './AboutEatSeasonal.scss';
 
 import {
-  TextHeadingMedium,
+  TextHeadingLarge,
   TextMedium
 } from '../../components-elements';
 
 export const AboutEatSeasonal: SFC<{}> = ({}) => (
   <div className='c-about-eat-seasonal'>
     <h2 className='c-about-eat-seasonal__heading'>
-      <TextHeadingMedium>
+      <TextHeadingLarge>
         About Eat Seasonal
-      </TextHeadingMedium>
+      </TextHeadingLarge>
     </h2>
     <p className='c-about-eat-seasonal__text'>
       <TextMedium>

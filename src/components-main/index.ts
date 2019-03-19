@@ -4,6 +4,8 @@ export * from './AndroidAppDownload/AndroidAppDownload';
 
 export * from './BottomTabs/BottomTabs.connector';
 
+export * from './CurrentSeasonName/CurrentSeasonName.connector';
+
 export * from './FoodTable/FoodTable.connector';
 
 export * from './Header/Header.connector';

@@ -2,9 +2,8 @@
 @import '../../styles/tools';
 
 .c-food-page {
-  margin-top: 3rem;
+  margin-top: 5rem;
   @include mq($from: tablet) {
-    margin-top: 4rem;
     display: flex;
   }
 }
