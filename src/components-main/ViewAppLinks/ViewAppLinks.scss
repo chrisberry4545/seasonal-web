@@ -9,8 +9,8 @@
   min-height: 150px;
 
   @include mq($from: tablet) {
+    flex-direction: row-reverse;
     min-height: 0;
-    flex-direction: row;
     max-width: 400px;
     margin: auto;
   }

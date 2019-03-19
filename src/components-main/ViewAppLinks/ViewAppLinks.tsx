@@ -12,7 +12,7 @@ import {
 
 export const ViewAppLinks: SFC<{}> = () => (
   <div className='c-view-app-links'>
-    <ViewWebAppVersionConnector />
     <AndroidAppDownload />
+    <ViewWebAppVersionConnector />
   </div>
 );
