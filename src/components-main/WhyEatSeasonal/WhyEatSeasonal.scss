@@ -2,7 +2,7 @@
 @import './../../styles/tools';
 
 .c-why-eat-seasonal {
-  padding: 2rem;
+  padding: 3rem 2rem;
   @include mq($until: tablet) {
     border-bottom: 1px solid $grey-med;
     padding: 3rem 2rem 2rem 2rem;
