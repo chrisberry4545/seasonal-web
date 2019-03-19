@@ -21,7 +21,7 @@ export const WhyEatSeasonal: SFC<{}> = ({}) => (
   <div className='c-why-eat-seasonal'>
     <h2 className='c-why-eat-seasonal__heading'>
       <TextHeadingMedium>
-        Why eat seasonal?
+        Why Eat Seasonal?
       </TextHeadingMedium>
     </h2>
     <SummaryColumnList {...summaryColumns} />

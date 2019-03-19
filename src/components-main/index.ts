@@ -1,3 +1,5 @@
+export * from './AboutEatSeasonal/AboutEatSeasonal';
+
 export * from './AndroidAppDownload/AndroidAppDownload';
 
 export * from './BottomTabs/BottomTabs.connector';

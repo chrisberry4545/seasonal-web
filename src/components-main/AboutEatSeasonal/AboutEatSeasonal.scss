@@ -1,14 +1,15 @@
 @import './../../styles/settings';
 @import './../../styles/tools';
 
-.c-why-eat-seasonal {
-  padding: 2rem;
+.c-about-eat-seasonal {
+  padding: 4rem 2rem 2rem 2rem;
   @include mq($until: tablet) {
     border-bottom: 1px solid $grey-med;
     padding: 3rem 2rem 2rem 2rem;
   }
 }
 
-  .c-why-eat-seasonal__heading {
-    margin-bottom: 2rem;
+  .c-about-eat-seasonal__text {
+    margin: 1rem auto;
+    text-align: left;
   }

@@ -3,6 +3,7 @@ import React from 'react';
 import './IntroPage.scss';
 
 import {
+  AboutEatSeasonal,
   ViewAppLinks,
   WhyEatSeasonal
 } from '../../components-main';
@@ -13,6 +14,7 @@ export const IntroPage = () => (
       <img className='c-intro-page__splash-image' src='/splash.png'/>
       <ViewAppLinks />
     </div>
+    <AboutEatSeasonal />
     <WhyEatSeasonal />
     <div className='c-intro-page__mobile-extra-app-links'>
       <ViewAppLinks />
