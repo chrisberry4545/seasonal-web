@@ -36,7 +36,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "gh-pages": "node ./release/gh-pages.js",
-    "lint": "tslint -c tslint.json 'src/**/*.ts{,x}'"
+    "lint": "tslint -c tslint.json 'src/**/*.ts{,x}'",
+    "postbuild": "react-snap"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -51,6 +52,7 @@
     "@chrisb-dev/tslint": "^1.0.1",
     "gh-pages": "^2.0.1",
     "pre-commit": "^1.2.2",
+    "react-snap": "^1.23.0",
     "tslint": "^5.14.0"
   },
   "pre-commit": [
