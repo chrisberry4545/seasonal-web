@@ -20,10 +20,10 @@ import {
 import { IState } from '../../interfaces';
 
 import { connectRouter, routerMiddleware } from 'connected-react-router';
-import { createBrowserHistory } from 'history';
+import { createHashHistory } from 'history';
 
 const epicMiddleware = createEpicMiddleware<Action, Action, IState, {}>();
-export const storeHistory = createBrowserHistory();
+export const storeHistory = createHashHistory();
 
 export const store = createStore(
   combineReducers<IState>({
