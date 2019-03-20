@@ -3,19 +3,30 @@ import {
   SearchBar
 } from './SearchBar';
 import {
-  searchBarChanged
+  searchBarChanged,
+  selectIsSearchBarVisible,
+  showSearchBar,
+  hideSearchBar
 } from '../../store';
-import { ISearchBarDispatchProps } from './SearchBar.interface';
+import {
+  ISearchBarDispatchProps,
+  ISearchBarInputProps
+} from './SearchBar.interface';
 import { Dispatch } from 'redux';
+import { IState } from '../../interfaces';
 
-const mapStateToProps = () => ({});
+const mapStateToProps = (state: IState): ISearchBarInputProps => ({
+  isSearchBarVisible: selectIsSearchBarVisible(state)
+});
 
 const mapDispatchToProps = (
   dispatch: Dispatch
 ): ISearchBarDispatchProps => ({
+  onHideSearchBar: () => dispatch(hideSearchBar()),
   onSearchChanged: (newSearchTerm: string) => (
     dispatch((searchBarChanged(newSearchTerm)))
-  )
+  ),
+  onShowSearchBar: () => dispatch(showSearchBar())
 });
 
 export const SearchBarConnecter = connect(

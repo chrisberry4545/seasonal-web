@@ -14,7 +14,7 @@ export const FoodPage = () => (
   <div className='c-food-page'>
     <HeaderConnecter />
     <SeasonMenuConnecter />
-    <div>
+    <div className='c-food-page__main'>
       <CurrentSeasonNameConnecter />
       <FoodTableConnecter />
     </div>

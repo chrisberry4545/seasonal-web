@@ -53,3 +53,17 @@ export function searchBarChanged(
     type: SEARCH_BAR_CHANGED
   };
 }
+
+export const SHOW_SEARCH_BAR = 'SHOW_SEARCH_BAR';
+export function showSearchBar(): Action {
+  return {
+    type: SHOW_SEARCH_BAR
+  };
+}
+
+export const HIDE_SEARCH_BAR = 'HIDE_SEARCH_BAR';
+export function hideSearchBar(): Action {
+  return {
+    type: HIDE_SEARCH_BAR
+  };
+}

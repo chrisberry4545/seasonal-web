@@ -5,7 +5,9 @@ import {
   GO_TO_FOOD_TAB,
   GO_TO_RECIPES_TABS,
   SEARCH_BAR_CHANGED,
-  ISearchBarChanged
+  ISearchBarChanged,
+  SHOW_SEARCH_BAR,
+  HIDE_SEARCH_BAR
 } from '../actions';
 import { IUiState } from '../../interfaces';
 import { Action } from 'redux';
@@ -13,7 +15,8 @@ import { TABS } from '../../const';
 
 const getDefaultState = (): IUiState => ({
   currentTab: TABS.FOOD,
-  isMenuOpen: false
+  isMenuOpen: false,
+  isSearchBarVisible: false
 });
 
 export function uiReducer(
@@ -46,6 +49,16 @@ export function uiReducer(
       return {
         ...state,
         searchTerm: (action as ISearchBarChanged).newSearchTerm
+      };
+    case SHOW_SEARCH_BAR:
+      return {
+        ...state,
+        isSearchBarVisible: true
+      };
+    case HIDE_SEARCH_BAR:
+      return {
+        ...state,
+        isSearchBarVisible: false
       };
     default:
       return state;

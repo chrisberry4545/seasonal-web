@@ -29,3 +29,8 @@ export const selectCurrentSearchTerm = createSelector(
   (uiState): string | undefined => uiState.searchTerm &&
     uiState.searchTerm.toLowerCase()
 );
+
+export const selectIsSearchBarVisible = createSelector(
+  selectUiState,
+  (uiState): boolean => uiState.isSearchBarVisible
+);
