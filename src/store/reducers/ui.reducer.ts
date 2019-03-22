@@ -58,7 +58,8 @@ export function uiReducer(
     case HIDE_SEARCH_BAR:
       return {
         ...state,
-        isSearchBarVisible: false
+        isSearchBarVisible: false,
+        searchTerm: ''
       };
     default:
       return state;
