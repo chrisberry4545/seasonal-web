@@ -9,9 +9,9 @@ import {
 import {
   BackgroundImageWithLoadingSpinner
 } from '../../components-elements';
-import { ImageGridItemProps } from './ImageGridItem.interface';
+import { IImageGridItem } from './ImageGridItem.interface';
 
-export const ImageGridItem: SFC<ImageGridItemProps> = ({
+export const ImageGridItem: SFC<IImageGridItem> = ({
   imageUrlSmall,
   linkUrl,
   name

@@ -5,10 +5,10 @@ import './ImageGrid.scss';
 import {
   ImageGridItem
 } from '../ImageGridItem/ImageGridItem';
-import { ImageGridProps } from './ImageGrid.interface';
+import { IImageGrid } from './ImageGrid.interface';
 import { TextMedium } from '../../components-elements';
 
-export const ImageGrid: SFC<ImageGridProps> = ({ data }) => (
+export const ImageGrid: SFC<IImageGrid> = ({ data }) => (
   <div className='c-image-grid'>
     {
       data && data.length

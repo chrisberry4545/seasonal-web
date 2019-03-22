@@ -1,7 +1,7 @@
 import {
-  ImageGridItemProps
+  IImageGridItem
 } from '../ImageGridItem/ImageGridItem.interface';
 
-export interface ImageGridProps {
-  data: ImageGridItemProps[] | undefined;
+export interface IImageGrid {
+  data: IImageGridItem[] | undefined;
 }
