@@ -3,7 +3,8 @@ import {
   CurrentSeasonName
 } from './CurrentSeasonName';
 import {
-  selectCurrentSeasonName
+  selectCurrentSeasonName,
+  selectIsCurrentSeasonLoading
 } from '../../store';
 import {
   ICurrentSeasonName
@@ -13,7 +14,8 @@ import { IState } from '../../interfaces';
 const mapStateToProps = (
   state: IState
 ): ICurrentSeasonName => ({
-  currentSeasonName: selectCurrentSeasonName(state)
+  currentSeasonName: selectCurrentSeasonName(state),
+  isLoading: selectIsCurrentSeasonLoading(state)
 });
 
 export const CurrentSeasonNameConnecter = connect(

@@ -8,8 +8,12 @@ import {
 import { ICurrentSeasonName } from './CurrentSeasonName.interface';
 
 export const CurrentSeasonName: SFC<ICurrentSeasonName> = ({
-  currentSeasonName
+  currentSeasonName,
+  isLoading
 }) => (
-  <TextHeadingSmall className='c-current-season-name'>
-    {currentSeasonName}
-  </TextHeadingSmall>);
+  !isLoading
+    ? <TextHeadingSmall className='c-current-season-name'>
+      {currentSeasonName}
+    </TextHeadingSmall>
+    : null
+);
