@@ -13,9 +13,10 @@ import { ImageGridItemProps } from './ImageGridItem.interface';
 
 export const ImageGridItem: SFC<ImageGridItemProps> = ({
   imageUrlSmall,
+  linkUrl,
   name
 }) => (
-  <div className='c-image-grid-item'>
+  <a href={linkUrl} className='c-image-grid-item' target='_blank'>
     <div className='c-image-grid-item__inner'>
       <div className='c-image-grid-item__image'>
         <BackgroundImageWithLoadingSpinner src={imageUrlSmall}/>
@@ -24,5 +25,5 @@ export const ImageGridItem: SFC<ImageGridItemProps> = ({
         {name}
       </TextMedium>
     </div>
-  </div>
+  </a>
 );

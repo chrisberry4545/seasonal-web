@@ -16,6 +16,7 @@ export const ImageGrid: SFC<ImageGridProps> = ({ data }) => (
           <ImageGridItem
             key={item.name}
             imageUrlSmall={item.imageUrlSmall}
+            linkUrl={item.linkUrl}
             name={item.name} />
         ))
         : <TextMedium className='c-image-grid__no-results'>
