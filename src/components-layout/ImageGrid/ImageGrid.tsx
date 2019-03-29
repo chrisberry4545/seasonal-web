@@ -8,16 +8,18 @@ import {
 import { IImageGrid } from './ImageGrid.interface';
 import { TextMedium } from '../../components-elements';
 
-export const ImageGrid: SFC<IImageGrid> = ({ data }) => (
+export const ImageGrid: SFC<IImageGrid> = ({
+  data,
+  onClick
+}) => (
   <div className='c-image-grid'>
     {
       data && data.length
         ? data.map((item) => (
           <ImageGridItem
             key={item.name}
-            imageUrlSmall={item.imageUrlSmall}
-            linkUrl={item.linkUrl}
-            name={item.name} />
+            {...item}
+            onClick={onClick} />
         ))
         : <TextMedium className='c-image-grid__no-results'>
             No results found

@@ -9,19 +9,21 @@ import {
 import {
   LoadingSpinner
 } from '../../components-elements';
-import { IFoodTableInputProps } from './FoodTable.interface';
+import { IFoodTableProps } from './FoodTable.interface';
 
 export const FoodTable = ({
   isCurrentTabFood,
   isLoading,
   food,
-  recipes
-}: IFoodTableInputProps) => (
+  recipes,
+  onFoodClick,
+  onRecipeClick
+}: IFoodTableProps) => (
   isLoading
     ? <div className='c-food-table__loading-spinner-wrapper'>
       <LoadingSpinner />
     </div>
     : isCurrentTabFood
-      ? <ImageGrid data={food} />
-      : <ImageGrid data={recipes} />
+      ? <ImageGrid data={food} onClick={onFoodClick} />
+      : <ImageGrid data={recipes} onClick={onRecipeClick} />
 );

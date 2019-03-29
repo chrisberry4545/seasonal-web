@@ -1,5 +1,6 @@
 export interface IImageGridItem {
+  id: string;
   name: string;
   imageUrlSmall: string;
-  linkUrl?: string;
+  onClick?: (itemId: string) => void;
 }

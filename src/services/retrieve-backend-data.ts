@@ -1,13 +1,14 @@
 import {
-    SEASON_DATA_URL
+  FOOD_DETAILS_DATA_URL,
+  SEASON_DATA_URL
 } from '././../config';
-import { IBaseSeason, IHydratedSeason } from '@chrisb-dev/seasonal-shared';
+import { IBaseSeason, IHydratedSeason, IHydratedFood } from '@chrisb-dev/seasonal-shared';
 
-const getAllSeasonData = (): Promise<IBaseSeason[]> => {
+export const getAllSeasonData = (): Promise<IBaseSeason[]> => {
   return fetch(SEASON_DATA_URL).then((resp) => resp.json());
 };
 
-const getSeasonDataBySeasonIndex = (
+export const getSeasonDataBySeasonIndex = (
   seasonIndex: number
 ): Promise<IHydratedSeason> => {
   return fetch(
@@ -15,10 +16,11 @@ const getSeasonDataBySeasonIndex = (
   ).then((resp) => resp.json());
 };
 
-const getCurrentSeasonIndex = (): number => new Date().getUTCMonth();
+export const getCurrentSeasonIndex = (): number => new Date().getUTCMonth();
 
-export {
-    getAllSeasonData,
-    getCurrentSeasonIndex,
-    getSeasonDataBySeasonIndex
+export const getFoodDetailsData = (
+  foodId: string | null
+): Promise<IHydratedFood> => {
+  return fetch(`${FOOD_DETAILS_DATA_URL}/${foodId}`)
+    .then((resp) => resp.json());
 };

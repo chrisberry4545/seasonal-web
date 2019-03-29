@@ -12,11 +12,13 @@ import {
 import { IImageGridItem } from './ImageGridItem.interface';
 
 export const ImageGridItem: SFC<IImageGridItem> = ({
+  id,
   imageUrlSmall,
-  linkUrl,
+  onClick,
   name
 }) => (
-  <a href={linkUrl} className='c-image-grid-item' target='_blank'>
+  <div onClick={() => onClick && onClick(id)}
+    className='c-image-grid-item'>
     <div className='c-image-grid-item__inner'>
       <div className='c-image-grid-item__image'>
         <BackgroundImageWithLoadingSpinner src={imageUrlSmall}/>
@@ -25,5 +27,5 @@ export const ImageGridItem: SFC<IImageGridItem> = ({
         {name}
       </TextMedium>
     </div>
-  </a>
+  </div>
 );

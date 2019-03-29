@@ -9,7 +9,8 @@ import {
   SET_CURRENT_SEASON_DATA_START,
   setCurrentSeasonDataSuccess,
   setCurrentSeasonDataStart,
-  SELECT_SEASON
+  SELECT_SEASON,
+  FOOD_DETAILS_SELECT_SEASON
 } from '../actions';
 
 import {
@@ -30,7 +31,8 @@ export const getCurrentSeasonDataStartEpic$: SeasonalEpic = (
   actions$.pipe(
     ofType(
       INIT_APP,
-      SELECT_SEASON
+      SELECT_SEASON,
+      FOOD_DETAILS_SELECT_SEASON
     ),
     mapTo(setCurrentSeasonDataStart())
   )

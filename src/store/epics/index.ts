@@ -14,8 +14,15 @@ import {
 import { trackActionEpic$ } from './tracking.epics';
 
 import {
-  goToWebVersion$
+  goToWebVersion$,
+  goToRecipeLink$,
+  goToFoodLink$,
+  goToFoodTable$
 } from './route.epics';
+import {
+  getCurrentFoodDetailsDataEpic$,
+  getCurrentFoodDetailsDataStartEpic$
+} from './current-food-details-data.epics';
 
 export const rootEpic = combineEpics(
   initAppEpic$,
@@ -24,5 +31,10 @@ export const rootEpic = combineEpics(
   getAllBasicSeasonDataStartEpic$,
   getAllBasicSeasonDataEpic$,
   trackActionEpic$,
-  goToWebVersion$
+  goToWebVersion$,
+  goToRecipeLink$,
+  goToFoodLink$,
+  goToFoodTable$,
+  getCurrentFoodDetailsDataStartEpic$,
+  getCurrentFoodDetailsDataEpic$
 );

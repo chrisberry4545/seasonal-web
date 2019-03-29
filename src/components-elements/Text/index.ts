@@ -5,3 +5,5 @@ export * from './TextHeadingMedium';
 export * from './TextHeadingSmall';
 
 export * from './TextMedium';
+
+export * from './TextSmall';

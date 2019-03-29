@@ -27,6 +27,16 @@ export function selectSeason(
   };
 }
 
+export const FOOD_DETAILS_SELECT_SEASON = 'FOOD_DETAILS_SELECT_SEASON';
+export function foodDetailsSelectSeason(
+  seasonIndex: number
+): ISelectSeason {
+  return {
+    seasonIndex,
+    type: FOOD_DETAILS_SELECT_SEASON
+  };
+}
+
 export const GO_TO_FOOD_TAB = 'GO_TO_FOOD_TAB';
 export function goToFoodTab(): Action {
   return {
@@ -65,5 +75,31 @@ export const HIDE_SEARCH_BAR = 'HIDE_SEARCH_BAR';
 export function hideSearchBar(): Action {
   return {
     type: HIDE_SEARCH_BAR
+  };
+}
+
+export interface IFoodItemClicked extends Action {
+  foodItemId: string;
+}
+export const FOOD_ITEM_CLICKED = 'FOOD_ITEM_CLICKED';
+export function foodItemClicked(
+  foodItemId: string
+): IFoodItemClicked {
+  return {
+    foodItemId,
+    type: FOOD_ITEM_CLICKED
+  };
+}
+
+export interface IRecipeItemClicked extends Action {
+  recipeItemId: string;
+}
+export const RECIPE_ITEM_CLICKED = 'RECIPE_ITEM_CLICKED';
+export function recipeItemClicked(
+  recipeItemId: string
+): IRecipeItemClicked {
+  return {
+    recipeItemId,
+    type: RECIPE_ITEM_CLICKED
   };
 }

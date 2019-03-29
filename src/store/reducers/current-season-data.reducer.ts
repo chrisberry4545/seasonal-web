@@ -3,6 +3,7 @@ import {
   SET_CURRENT_SEASON_DATA_SUCCESS,
   ISetCurrentSeasonDataSuccess,
   SELECT_SEASON,
+  FOOD_DETAILS_SELECT_SEASON,
   ISelectSeason
 } from '../actions';
 import { ICurrentSeasonDataState } from '../../interfaces';
@@ -31,6 +32,7 @@ export function currentSeasonDataReducer(
         data: (action as ISetCurrentSeasonDataSuccess).currentSeasonData,
         isLoading: false
       };
+    case FOOD_DETAILS_SELECT_SEASON:
     case SELECT_SEASON:
       return {
         ...state,

@@ -8,6 +8,7 @@ $image-grid-item-margin: 0.9rem;
   margin-bottom: $image-grid-item-margin;
   width: 50%;
   display: inline-block;
+  cursor: pointer;
   @include mq($from: tablet) {
     width: 33%;
   }

@@ -6,6 +6,10 @@ export * from './BottomTabs/BottomTabs.connector';
 
 export * from './CurrentSeasonName/CurrentSeasonName.connector';
 
+export * from './FoodDetailsLoader/FoodDetailsLoader.connector';
+
+export * from './FoodDetailsTopSection/FoodDetailsTopSection.connector';
+
 export * from './FoodTable/FoodTable.connector';
 
 export * from './Header/Header.connector';
@@ -13,6 +17,8 @@ export * from './Header/Header.connector';
 export * from './SearchBar/SearchBar.connector';
 
 export * from './SeasonMenu/SeasonMenu.connector';
+
+export * from './SeasonsForFood/SeasonsForFood.connector';
 
 export * from './ViewAppLinks/ViewAppLinks';
 

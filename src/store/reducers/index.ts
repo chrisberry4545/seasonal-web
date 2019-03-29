@@ -7,6 +7,10 @@ import {
 } from 'redux';
 import { createEpicMiddleware } from 'redux-observable';
 
+import {
+  currentFoodDetailsDataReducer
+} from './current-food-details-data.reducer';
+
 import { currentSeasonDataReducer } from './current-season-data.reducer';
 
 import { allBasicSeasonDataReducer } from './all-basic-season-data.reducer';
@@ -28,6 +32,7 @@ export const storeHistory = createHashHistory();
 export const store = createStore(
   combineReducers<IState>({
     allBasicSeasonData: allBasicSeasonDataReducer,
+    currentFoodDetailsData: currentFoodDetailsDataReducer,
     currentSeasonData: currentSeasonDataReducer,
     router: connectRouter(storeHistory),
     ui: uiReducer

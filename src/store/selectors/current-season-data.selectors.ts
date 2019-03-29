@@ -31,6 +31,15 @@ export const selectCurrentSeasonRecipes = createSelector(
     currentSeason.recipes
 );
 
+export const selectCurrentSeasonRecipesById = (recipeId: string) => (
+  createSelector(
+    selectCurrentSeasonRecipes,
+    (recipes): IRecipe | undefined => recipes && recipes.find(({ id }) => (
+      id === recipeId
+    ))
+  )
+);
+
 export const selectCurrentSeasonIndex = createSelector(
   selectCurrentSeasonDataState,
   (currentSeasonData) => currentSeasonData.currentSeasonIndex

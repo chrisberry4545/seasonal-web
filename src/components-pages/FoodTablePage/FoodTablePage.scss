@@ -1,13 +1,13 @@
 @import '../../styles/settings';
 @import '../../styles/tools';
 
-.c-food-page {
-  margin-top: 5rem;
+.c-food-table-page {
+  margin-top: $default-top-margin;
   @include mq($from: tablet) {
     display: flex;
   }
 }
 
-  .c-food-page__main {
+  .c-food-table-page__main {
     width: 100%;
   }

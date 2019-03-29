@@ -1,3 +1,5 @@
+export * from './ArrowIcon';
+
 export * from './BurgerIcon';
 
 export * from './CrossIcon';

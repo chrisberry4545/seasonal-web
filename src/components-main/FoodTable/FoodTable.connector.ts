@@ -4,12 +4,18 @@ import {
 } from './FoodTable';
 import {
   selectIsCurrentSeasonLoading,
-  selectVisibleFoodData,
   selectVisibleRecipeData,
-  selectIsCurrentTabFood
+  selectIsCurrentTabFood,
+  selectVisibleFoodData,
+  foodItemClicked,
+  recipeItemClicked
 } from '../../store';
 import { IState } from '../../interfaces';
-import { IFoodTableInputProps } from './FoodTable.interface';
+import {
+  IFoodTableInputProps,
+  IFoodTableDispatchProps
+} from './FoodTable.interface';
+import { Dispatch } from 'redux';
 
 const mapStateToProps = (
   state: IState
@@ -22,6 +28,16 @@ const mapStateToProps = (
   };
 };
 
+const mapDispatchToProps = (
+  dispatch: Dispatch
+): IFoodTableDispatchProps => {
+  return {
+    onFoodClick: (foodItemId) => dispatch(foodItemClicked(foodItemId)),
+    onRecipeClick: (recipeItemId) => dispatch(recipeItemClicked(recipeItemId))
+  };
+};
+
 export const FoodTableConnecter = connect(
-  mapStateToProps
+  mapStateToProps,
+  mapDispatchToProps
 )(FoodTable);
