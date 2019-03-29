@@ -5,19 +5,16 @@ import './FoodDetailsPage.scss';
 import {
   FoodDetailsLoaderConnecter,
   FoodDetailsTopSectionConnecter,
-  HeaderConnecter,
-  SeasonsForFoodConnecter,
-  SeasonMenuConnecter
+  PageWithMenu,
+  SeasonsForFoodConnecter
 } from '../../components-main';
 
 export const FoodDetailsPage = () => (
-  <div className='c-food-details-page'>
-    <HeaderConnecter />
-    <SeasonMenuConnecter />
+  <PageWithMenu>
     <div className='c-food-details-page__main'>
       <FoodDetailsTopSectionConnecter />
       <FoodDetailsLoaderConnecter />
       <SeasonsForFoodConnecter />
     </div>
-  </div>
+  </PageWithMenu>
 );

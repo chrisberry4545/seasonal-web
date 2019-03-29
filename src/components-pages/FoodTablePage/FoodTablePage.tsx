@@ -3,21 +3,16 @@ import React from 'react';
 import './FoodTablePage.scss';
 
 import {
-  BottomTabsConnecter,
   CurrentSeasonNameConnecter,
   FoodTableConnecter,
-  HeaderConnecter,
-  SeasonMenuConnecter
+  PageWithMenu
 } from '../../components-main';
 
 export const FoodTablePage = () => (
-  <div className='c-food-table-page'>
-    <HeaderConnecter />
-    <SeasonMenuConnecter />
+  <PageWithMenu>
     <div className='c-food-table-page__main'>
       <CurrentSeasonNameConnecter />
       <FoodTableConnecter />
     </div>
-    <BottomTabsConnecter />
-  </div>
+  </PageWithMenu>
 );

@@ -1,13 +1,6 @@
 @import '../../styles/settings';
 @import '../../styles/tools';
 
-.c-food-table-page {
-  margin-top: $default-top-margin;
-  @include mq($from: tablet) {
-    display: flex;
-  }
-}
-
   .c-food-table-page__main {
     width: 100%;
   }
