@@ -3,11 +3,13 @@ import {
   FoodDetailsTopSection
 } from './FoodDetailsTopSection';
 import {
-  goBackFromFoodDetails,
+  goBackFromFoodDetails
+} from '../../store';
+import {
   selectCurrentFoodDetailsName,
   selectCurrentFoodDetailsImageUrl,
-  selectIsCurrentFoodDetailsLoading
-} from '../../store';
+  selectIsFoodDataOrBasicSeasonsLoading
+} from '@chrisb-dev/seasonal-shared';
 
 import { IState } from '../../interfaces';
 import {
@@ -21,7 +23,7 @@ const mapStateToProps = (
 ): IFoodDetailsTopSectionInputProps => ({
   foodImageUrl: selectCurrentFoodDetailsImageUrl(state),
   foodName: selectCurrentFoodDetailsName(state),
-  isLoading: selectIsCurrentFoodDetailsLoading(state)
+  isLoading: selectIsFoodDataOrBasicSeasonsLoading(state)
 });
 
 const mapDispatchToProps = (

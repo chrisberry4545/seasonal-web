@@ -3,13 +3,15 @@ import {
   FoodTable
 } from './FoodTable';
 import {
+  selectIsCurrentTabFood
+} from '../../store';
+import {
   selectIsCurrentSeasonLoading,
   selectVisibleRecipeData,
-  selectIsCurrentTabFood,
   selectVisibleFoodData,
   foodItemClicked,
   recipeItemClicked
-} from '../../store';
+} from '@chrisb-dev/seasonal-shared';
 import { IState } from '../../interfaces';
 import {
   IFoodTableInputProps,

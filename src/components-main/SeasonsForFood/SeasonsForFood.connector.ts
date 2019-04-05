@@ -4,9 +4,9 @@ import {
 } from './SeasonsForFood';
 import {
   selectSeasonsSelectedForFood,
-  selectIsCurrentFoodDetailsLoading,
+  selectIsFoodDataOrBasicSeasonsLoading,
   foodDetailsSelectSeason
-} from '../../store';
+} from '@chrisb-dev/seasonal-shared';
 
 import { IState } from '../../interfaces';
 import {
@@ -18,7 +18,7 @@ import { Dispatch } from 'redux';
 const mapStateToProps = (
   state: IState
 ): ISeasonForFoodInputProps => ({
-  isLoading: selectIsCurrentFoodDetailsLoading(state),
+  isLoading: selectIsFoodDataOrBasicSeasonsLoading(state),
   seasonsSelectedForFood: selectSeasonsSelectedForFood(state)
 });
 

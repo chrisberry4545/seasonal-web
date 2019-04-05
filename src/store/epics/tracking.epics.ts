@@ -1,16 +1,19 @@
 import { ActionsObservable } from 'redux-observable';
 
 import {
+  GO_TO_FOOD_TAB,
+  GO_TO_RECIPES_TABS,
+  GO_TO_WEB_VERSION
+} from '../actions';
+
+import {
   SELECT_SEASON,
   FOOD_DETAILS_SELECT_SEASON,
   OPEN_MENU,
   CLOSE_MENU,
-  GO_TO_FOOD_TAB,
-  GO_TO_RECIPES_TABS,
-  GO_TO_WEB_VERSION,
   RECIPE_ITEM_CLICKED,
   FOOD_ITEM_CLICKED
-} from '../actions';
+} from '@chrisb-dev/seasonal-shared';
 
 import {
   map,
@@ -19,7 +22,7 @@ import {
 } from 'rxjs/operators';
 import { Action } from 'redux';
 import { Observable } from 'rxjs';
-import { SeasonalEpic } from './seasonal-epic.type';
+import { WebSeasonalEpic } from './seasonal-epic.type';
 
 const ACTIONS_TO_TRACK = [
   SELECT_SEASON,
@@ -33,7 +36,7 @@ const ACTIONS_TO_TRACK = [
   FOOD_ITEM_CLICKED
 ];
 
-export const trackActionEpic$: SeasonalEpic = (
+export const trackActionEpic$: WebSeasonalEpic = (
   actions$: ActionsObservable<Action>
 ): Observable<Action> => (
   actions$.pipe(

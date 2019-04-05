@@ -9,7 +9,7 @@ import {
 } from '../../components-elements';
 
 import {
-  ISeasonForFoodTopSectionProps
+  IFoodDetailsTopSectionProps
 } from './FoodDetailsTopSection.interface';
 
 export const FoodDetailsTopSection = ({
@@ -17,7 +17,7 @@ export const FoodDetailsTopSection = ({
   foodName,
   isLoading,
   onGoBack
-}: ISeasonForFoodTopSectionProps) => (
+}: IFoodDetailsTopSectionProps) => (
   !isLoading
     ? <div className='c-food-details-top-section'>
     <div className='c-food-details-top-section__top-bar'>

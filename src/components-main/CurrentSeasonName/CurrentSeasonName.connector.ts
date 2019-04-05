@@ -5,7 +5,7 @@ import {
 import {
   selectCurrentSeasonName,
   selectIsCurrentSeasonLoading
-} from '../../store';
+} from '@chrisb-dev/seasonal-shared';
 import {
   ICurrentSeasonName
 } from './CurrentSeasonName.interface';
