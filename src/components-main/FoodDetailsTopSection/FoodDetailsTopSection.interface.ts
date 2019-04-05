@@ -8,6 +8,6 @@ export interface IFoodDetailsTopSectionDispatchProps {
   onGoBack: () => void;
 }
 
-export interface ISeasonForFoodTopSectionProps
+export interface IFoodDetailsTopSectionProps
   extends IFoodDetailsTopSectionDispatchProps,
   IFoodDetailsTopSectionInputProps {}

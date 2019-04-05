@@ -1,6 +1,6 @@
 import { ActionsObservable, ofType, StateObservable } from 'redux-observable';
 import {
-  mapTo, withLatestFrom, map
+  mapTo, withLatestFrom, map, filter
 } from 'rxjs/operators';
 import { Action } from 'redux';
 import { Observable } from 'rxjs';
@@ -13,12 +13,14 @@ import {
   IFoodItemClicked,
   GO_BACK_FROM_FOOD_DETAILS,
   FOOD_DETAILS_SELECT_SEASON,
-  SELECT_SEASON
+  SELECT_SEASON,
+  setCurrentFoodDetailsDataStart,
+  INIT_APP
 } from '../actions';
 import { push } from 'connected-react-router';
 import { FOOD_TABLE_URL, FOOD_DETAILS_URL } from '../../const';
 import { IState } from '../../interfaces';
-import { selectCurrentSeasonRecipesById } from '../selectors';
+import { selectCurrentSeasonRecipesById, selectCurrentFoodDetailsId } from '../selectors';
 
 export const goToWebVersion$: SeasonalEpic = (
   actions$: ActionsObservable<Action>
@@ -60,6 +62,30 @@ export const goToFoodLink$: SeasonalEpic = (
     map((action) => (
       push(`${FOOD_DETAILS_URL}/${(action as IFoodItemClicked).foodItemId}`)
     ))
+  )
+);
+
+export const goToFoodDetails$: SeasonalEpic = (
+  actions$: ActionsObservable<Action>
+): Observable<Action> => (
+  actions$.pipe(
+    ofType(FOOD_ITEM_CLICKED),
+    map((action) => (
+      setCurrentFoodDetailsDataStart((action as IFoodItemClicked).foodItemId)
+    ))
+  )
+);
+
+export const initFoodDetails$: SeasonalEpic = (
+  actions$: ActionsObservable<Action>,
+  state$: StateObservable<IState>
+): Observable<Action> => (
+  actions$.pipe(
+    ofType(INIT_APP),
+    withLatestFrom(state$),
+    map(([, state]) => selectCurrentFoodDetailsId(state)),
+    filter((foodDetailsId) => Boolean(foodDetailsId)),
+    map((foodDetailsId) => setCurrentFoodDetailsDataStart(foodDetailsId!))
   )
 );
 

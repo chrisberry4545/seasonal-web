@@ -17,6 +17,8 @@ import { allBasicSeasonDataReducer } from './all-basic-season-data.reducer';
 
 import { uiReducer } from './ui.reducer';
 
+import { webUiReducer } from './web-ui.reducer';
+
 import {
   rootEpic
 } from '../epics';
@@ -35,7 +37,8 @@ export const store = createStore(
     currentFoodDetailsData: currentFoodDetailsDataReducer,
     currentSeasonData: currentSeasonDataReducer,
     router: connectRouter(storeHistory),
-    ui: uiReducer
+    ui: uiReducer,
+    webUi: webUiReducer
   }),
   undefined,
   compose(

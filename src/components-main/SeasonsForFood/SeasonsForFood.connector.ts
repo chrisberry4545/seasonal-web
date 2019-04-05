@@ -4,7 +4,7 @@ import {
 } from './SeasonsForFood';
 import {
   selectSeasonsSelectedForFood,
-  selectIsCurrentFoodDetailsLoading,
+  selectIsFoodDataOrBasicSeasonsLoading,
   foodDetailsSelectSeason
 } from '../../store';
 
@@ -18,7 +18,7 @@ import { Dispatch } from 'redux';
 const mapStateToProps = (
   state: IState
 ): ISeasonForFoodInputProps => ({
-  isLoading: selectIsCurrentFoodDetailsLoading(state),
+  isLoading: selectIsFoodDataOrBasicSeasonsLoading(state),
   seasonsSelectedForFood: selectSeasonsSelectedForFood(state)
 });
 

@@ -6,4 +6,6 @@ export * from './season-data-state.interface';
 
 export * from './ui-state.interface';
 
+export * from './web-ui-state.interface';
+
 export * from './state.interface';

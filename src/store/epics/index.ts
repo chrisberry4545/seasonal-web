@@ -17,11 +17,12 @@ import {
   goToWebVersion$,
   goToRecipeLink$,
   goToFoodLink$,
-  goToFoodTable$
+  goToFoodTable$,
+  goToFoodDetails$,
+  initFoodDetails$
 } from './route.epics';
 import {
-  getCurrentFoodDetailsDataEpic$,
-  getCurrentFoodDetailsDataStartEpic$
+  getCurrentFoodDetailsDataEpic$
 } from './current-food-details-data.epics';
 
 export const rootEpic = combineEpics(
@@ -34,7 +35,8 @@ export const rootEpic = combineEpics(
   goToWebVersion$,
   goToRecipeLink$,
   goToFoodLink$,
+  goToFoodDetails$,
+  initFoodDetails$,
   goToFoodTable$,
-  getCurrentFoodDetailsDataStartEpic$,
   getCurrentFoodDetailsDataEpic$
 );

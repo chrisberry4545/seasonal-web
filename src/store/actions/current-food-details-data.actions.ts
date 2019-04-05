@@ -1,10 +1,16 @@
 import { IHydratedFood } from '@chrisb-dev/seasonal-shared';
 import { Action } from 'redux';
 
+export interface ISetCurrentFoodDetailsDataStart extends Action {
+  foodItemId?: string;
+}
 export const SET_CURRENT_FOOD_DETAILS_DATA_START =
   'SET_CURRENT_FOOD_DETAILS_DATA_START';
-export function setCurrentFoodDetailsDataStart(): Action {
+export function setCurrentFoodDetailsDataStart(
+  foodItemId?: string
+): ISetCurrentFoodDetailsDataStart {
   return {
+    foodItemId,
     type: SET_CURRENT_FOOD_DETAILS_DATA_START
   };
 }

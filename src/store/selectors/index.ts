@@ -8,4 +8,6 @@ export * from './route.selectors';
 
 export * from './ui.selectors';
 
+export * from './web-ui.selectors';
+
 export * from './combined-selectors';

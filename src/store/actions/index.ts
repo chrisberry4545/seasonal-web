@@ -9,3 +9,5 @@ export * from './init.actions';
 export * from './route.actions';
 
 export * from './ui.actions';
+
+export * from './web-ui.actions';

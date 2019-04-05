@@ -2,8 +2,6 @@ import {
   CLOSE_MENU,
   OPEN_MENU,
   SELECT_SEASON,
-  GO_TO_FOOD_TAB,
-  GO_TO_RECIPES_TABS,
   SEARCH_BAR_CHANGED,
   ISearchBarChanged,
   SHOW_SEARCH_BAR,
@@ -11,10 +9,8 @@ import {
 } from '../actions';
 import { IUiState } from '../../interfaces';
 import { Action } from 'redux';
-import { TABS } from '../../const';
 
 const getDefaultState = (): IUiState => ({
-  currentTab: TABS.FOOD,
   isMenuOpen: false,
   isSearchBarVisible: false
 });
@@ -34,16 +30,6 @@ export function uiReducer(
       return {
         ...state,
         isMenuOpen: true
-      };
-    case GO_TO_FOOD_TAB:
-      return {
-        ...state,
-        currentTab: TABS.FOOD
-      };
-    case GO_TO_RECIPES_TABS:
-      return {
-        ...state,
-        currentTab: TABS.RECIPES
       };
     case SEARCH_BAR_CHANGED:
       return {

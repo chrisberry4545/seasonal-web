@@ -6,7 +6,7 @@ import {
   goBackFromFoodDetails,
   selectCurrentFoodDetailsName,
   selectCurrentFoodDetailsImageUrl,
-  selectIsCurrentFoodDetailsLoading
+  selectIsFoodDataOrBasicSeasonsLoading
 } from '../../store';
 
 import { IState } from '../../interfaces';
@@ -21,7 +21,7 @@ const mapStateToProps = (
 ): IFoodDetailsTopSectionInputProps => ({
   foodImageUrl: selectCurrentFoodDetailsImageUrl(state),
   foodName: selectCurrentFoodDetailsName(state),
-  isLoading: selectIsCurrentFoodDetailsLoading(state)
+  isLoading: selectIsFoodDataOrBasicSeasonsLoading(state)
 });
 
 const mapDispatchToProps = (

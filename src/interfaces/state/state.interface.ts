@@ -6,6 +6,7 @@ import { RouterState } from 'connected-react-router';
 import {
   ICurrentFoodDetailsDataState
 } from './current-food-details-data-state.interface';
+import { IWebUiState } from './web-ui-state.interface';
 
 export interface IState {
   allBasicSeasonData: ISeasonDataState;
@@ -13,4 +14,5 @@ export interface IState {
   currentSeasonData: ICurrentSeasonDataState;
   router: RouterState;
   ui: IUiState;
+  webUi: IWebUiState;
 }
