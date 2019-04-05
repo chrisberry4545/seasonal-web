@@ -3,11 +3,13 @@ import {
   FoodDetailsTopSection
 } from './FoodDetailsTopSection';
 import {
-  goBackFromFoodDetails,
+  goBackFromFoodDetails
+} from '../../store';
+import {
   selectCurrentFoodDetailsName,
   selectCurrentFoodDetailsImageUrl,
   selectIsFoodDataOrBasicSeasonsLoading
-} from '../../store';
+} from '@chrisb-dev/seasonal-shared';
 
 import { IState } from '../../interfaces';
 import {

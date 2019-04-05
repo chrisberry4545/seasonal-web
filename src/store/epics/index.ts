@@ -1,16 +1,6 @@
 import { combineEpics } from 'redux-observable';
 
-import {
-  getCurrentSeasonDataStartEpic$,
-  getCurrentSeasonDataEpic$
-} from './current-season-data.epics';
-
-import { initAppEpic$ } from './init.epics';
-
-import {
-  getAllBasicSeasonDataStartEpic$,
-  getAllBasicSeasonDataEpic$
-} from './all-basic-season-data.epics';
+import { rootEpics } from '@chrisb-dev/seasonal-shared';
 import { trackActionEpic$ } from './tracking.epics';
 
 import {
@@ -21,22 +11,14 @@ import {
   goToFoodDetails$,
   initFoodDetails$
 } from './route.epics';
-import {
-  getCurrentFoodDetailsDataEpic$
-} from './current-food-details-data.epics';
 
 export const rootEpic = combineEpics(
-  initAppEpic$,
-  getCurrentSeasonDataStartEpic$,
-  getCurrentSeasonDataEpic$,
-  getAllBasicSeasonDataStartEpic$,
-  getAllBasicSeasonDataEpic$,
+  ...rootEpics,
   trackActionEpic$,
   goToWebVersion$,
   goToRecipeLink$,
   goToFoodLink$,
   goToFoodDetails$,
   initFoodDetails$,
-  goToFoodTable$,
-  getCurrentFoodDetailsDataEpic$
+  goToFoodTable$
 );

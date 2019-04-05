@@ -8,14 +8,8 @@ import {
 import { createEpicMiddleware } from 'redux-observable';
 
 import {
-  currentFoodDetailsDataReducer
-} from './current-food-details-data.reducer';
-
-import { currentSeasonDataReducer } from './current-season-data.reducer';
-
-import { allBasicSeasonDataReducer } from './all-basic-season-data.reducer';
-
-import { uiReducer } from './ui.reducer';
+  allReducers
+} from '@chrisb-dev/seasonal-shared';
 
 import { webUiReducer } from './web-ui.reducer';
 
@@ -32,15 +26,11 @@ const epicMiddleware = createEpicMiddleware<Action, Action, IState, {}>();
 export const storeHistory = createHashHistory();
 
 export const store = createStore(
-  combineReducers<IState>({
-    allBasicSeasonData: allBasicSeasonDataReducer,
-    currentFoodDetailsData: currentFoodDetailsDataReducer,
-    currentSeasonData: currentSeasonDataReducer,
+  combineReducers({
+    ...allReducers,
     router: connectRouter(storeHistory),
-    ui: uiReducer,
     webUi: webUiReducer
   }),
-  undefined,
   compose(
     applyMiddleware(
       routerMiddleware(storeHistory),

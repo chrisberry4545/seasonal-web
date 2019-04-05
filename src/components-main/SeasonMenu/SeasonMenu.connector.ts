@@ -9,7 +9,7 @@ import {
   selectIsBasicSeasonDataLoading,
   selectSeason,
   selectCurrentSeasonIndex
-} from '../../store';
+} from '@chrisb-dev/seasonal-shared';
 
 import { IState } from '../../interfaces';
 import {

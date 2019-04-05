@@ -42,7 +42,7 @@ $season-marker-size: 50px !default;
   }
 
     .c-season-for-food__season--selected {
-      background-color: none;
+      background-color: transparent;
     }
 
   .c-season-food__in-season-key {
@@ -57,11 +57,12 @@ $season-marker-size: 50px !default;
       height: 20px;
       display: inline-block;
       margin-left: 0.5rem;
+      background-color: $season-unselected-color;
     }
   }
 
     .c-season-food__in-season-key--in-season::after {
-      background-color: $season-unselected-color;
+      background-color: transparent;
     }
 
     .c-season-food__in-season-key__text {
