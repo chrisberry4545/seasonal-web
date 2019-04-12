@@ -4,7 +4,7 @@
   "private": true,
   "homepage": "https://chrisberry4545.github.io/",
   "dependencies": {
-    "@chrisb-dev/seasonal-shared": "1.4.0",
+    "@chrisb-dev/seasonal-shared": "1.5.0",
     "@types/google.analytics": "^0.0.39",
     "@types/jest": "^24.0.11",
     "@types/node": "^11.11.3",
@@ -37,7 +37,8 @@
     "gh-pages": "node ./release/gh-pages.js",
     "lint": "tslint -c tslint.json 'src/**/*.ts{,x}'",
     "postbuild": "react-snap",
-    "deploy": "npm run build && npm run gh-pages"
+    "deploy": "npm run build && npm run gh-pages",
+    "schematics": "schematics @chrisb-dev/react-schematics:react-components"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -49,6 +50,7 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "@chrisb-dev/react-schematics": "^1.0.1",
     "@chrisb-dev/tslint": "^1.0.1",
     "gh-pages": "^2.0.1",
     "pre-commit": "^1.2.2",

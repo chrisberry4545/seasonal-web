@@ -8,7 +8,8 @@ import {
   selectAllBasicSeasonData,
   selectIsBasicSeasonDataLoading,
   selectSeason,
-  selectCurrentSeasonIndex
+  selectCurrentSeasonIndex,
+  goToAllSeasonsView
 } from '@chrisb-dev/seasonal-shared';
 
 import { IState } from '../../interfaces';
@@ -18,11 +19,14 @@ import {
 } from './SeasonMenu.interface';
 import { Dispatch } from 'redux';
 
+import { selectIsCurrentRouteAllSeasons } from '../../store';
+
 const mapStateToProps = (
   state: IState
 ): ISeasonMenuInputProps => ({
   allBasicSeasonData: selectAllBasicSeasonData(state),
   currentSeasonIndex: selectCurrentSeasonIndex(state),
+  isCurrentRouteAllSeasons: selectIsCurrentRouteAllSeasons(state),
   isLoading: selectIsBasicSeasonDataLoading(state),
   isMenuOpen: selectIsMenuOpen(state)
 });
@@ -30,8 +34,11 @@ const mapStateToProps = (
 const mapDispatchToProps = (
   dispatch: Dispatch
 ): ISeasonMenuDispatchProps => ({
+  onAllSeasonsSelected: () => dispatch(goToAllSeasonsView()),
   onClose: () => dispatch(closeMenu()),
-  onSeasonSelected: (seasonIndex: number) => dispatch(selectSeason(seasonIndex))
+  onSeasonSelected: (
+    seasonIndex: number
+  ) => dispatch(selectSeason(seasonIndex))
 });
 
 export const SeasonMenuConnecter = connect(

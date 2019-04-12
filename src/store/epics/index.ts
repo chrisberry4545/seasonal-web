@@ -9,7 +9,10 @@ import {
   goToFoodLink$,
   goToFoodTable$,
   goToFoodDetails$,
-  initFoodDetails$
+  initFoodDetails$,
+  initAllSeasonsWithFoodData$,
+  goToAllSeasonsView$,
+  goBack$
 } from './route.epics';
 
 export const rootEpic = combineEpics(
@@ -19,6 +22,9 @@ export const rootEpic = combineEpics(
   goToRecipeLink$,
   goToFoodLink$,
   goToFoodDetails$,
+  goBack$,
   initFoodDetails$,
-  goToFoodTable$
+  initAllSeasonsWithFoodData$,
+  goToFoodTable$,
+  goToAllSeasonsView$
 );

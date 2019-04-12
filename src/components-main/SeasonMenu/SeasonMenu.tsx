@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
 import './SeasonMenu.scss';
 
@@ -20,10 +20,12 @@ const OverlayFadeInOutAnimation = fadeInOutAnimation();
 export const SeasonMenu = ({
   allBasicSeasonData,
   currentSeasonIndex,
+  isCurrentRouteAllSeasons,
   isLoading,
   isMenuOpen,
   onSeasonSelected,
-  onClose
+  onClose,
+  onAllSeasonsSelected
 }: ISeasonMenuProps) => (
   <div>
     <PoseGroup>
@@ -38,19 +40,34 @@ export const SeasonMenu = ({
       className={`c-season-menu ${isMenuOpen ? 'c-season-menu--is-open' : ''}`}>
       {
         !isLoading
-          ? allBasicSeasonData && allBasicSeasonData.map(({ name }, index) => (
-              <BareButton
-                key={name}
-                className={
-                  `c-season-menu__button ${
-                    index === currentSeasonIndex
-                      ? 'c-season-menu__button--selected'
-                      : ''
-                    }`}
-                onClick={() => onSeasonSelected(index)}>
-                <TextMedium>{ name }</TextMedium>
+          ? <Fragment>
+              { allBasicSeasonData &&
+                  allBasicSeasonData.map(({ name }, index) => (
+                  <BareButton
+                    key={name}
+                    className={
+                      `c-season-menu__button ${
+                        !isCurrentRouteAllSeasons &&
+                        index === currentSeasonIndex
+                          ? 'c-season-menu__button--selected'
+                          : ''
+                        }`}
+                    onClick={() => onSeasonSelected(index)}>
+                    <TextMedium>{ name }</TextMedium>
+                  </BareButton>
+                ))
+              }
+              <BareButton className={
+                `c-season-menu__button ${
+                  isCurrentRouteAllSeasons
+                    ? 'c-season-menu__button--selected'
+                    : ''
+                }`
+                }
+                onClick={onAllSeasonsSelected}>
+                <TextMedium>All seasons</TextMedium>
               </BareButton>
-            ))
+          </Fragment>
           : <div className='c-season-menu__loading-spinner-wrapper'>
             <LoadingSpinner />
           </div>

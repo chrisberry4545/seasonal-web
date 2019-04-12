@@ -2,18 +2,14 @@ import React, { SFC } from 'react';
 
 import './CurrentSeasonName.scss';
 
-import {
-  TextHeadingSmall
-} from '../../components-elements';
 import { ICurrentSeasonName } from './CurrentSeasonName.interface';
+import { SeasonNameView } from '../../components-layout';
 
 export const CurrentSeasonName: SFC<ICurrentSeasonName> = ({
   currentSeasonName,
   isLoading
 }) => (
   !isLoading
-    ? <TextHeadingSmall className='c-current-season-name'>
-      {currentSeasonName}
-    </TextHeadingSmall>
+    ? <SeasonNameView name={currentSeasonName} />
     : null
 );

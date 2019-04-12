@@ -1,6 +1,6 @@
 import { ActionsObservable, ofType, StateObservable } from 'redux-observable';
 import {
-  mapTo, withLatestFrom, map, filter
+  mapTo, withLatestFrom, map, filter, debounceTime
 } from 'rxjs/operators';
 import { Action } from 'redux';
 import { Observable } from 'rxjs';
@@ -9,6 +9,7 @@ import {
   GO_BACK_FROM_FOOD_DETAILS
 } from '../actions';
 import {
+  GO_TO_ALL_SEASONS_VIEW,
   RECIPE_ITEM_CLICKED,
   IRecipeItemClicked,
   FOOD_ITEM_CLICKED,
@@ -17,12 +18,13 @@ import {
   SELECT_SEASON,
   setCurrentFoodDetailsDataStart,
   INIT_APP,
-  selectCurrentSeasonRecipesById
+  selectCurrentSeasonRecipesById,
+  setAllSeasonsWithFoodDataStart
 } from '@chrisb-dev/seasonal-shared';
-import { push } from 'connected-react-router';
-import { FOOD_TABLE_URL, FOOD_DETAILS_URL } from '../../const';
+import { push, goBack } from 'connected-react-router';
+import { FOOD_TABLE_URL, FOOD_DETAILS_URL, ALL_SEASONS_URL } from '../../const';
 import { IState } from '../../interfaces';
-import { selectCurrentFoodDetailsId } from '../selectors';
+import { selectCurrentFoodDetailsId, selectIsCurrentRouteAllSeasons } from '../selectors';
 import { WebSeasonalEpic } from './seasonal-epic.type';
 
 export const goToWebVersion$: WebSeasonalEpic = (
@@ -92,15 +94,52 @@ export const initFoodDetails$: WebSeasonalEpic = (
   )
 );
 
+export const initAllSeasonsWithFoodData$: WebSeasonalEpic = (
+  actions$: ActionsObservable<Action>,
+  state$: StateObservable<IState>
+): Observable<Action> => (
+  actions$.pipe(
+    ofType(
+      GO_TO_ALL_SEASONS_VIEW,
+      INIT_APP,
+      GO_BACK_FROM_FOOD_DETAILS
+    ),
+    debounceTime(50),
+    withLatestFrom(state$),
+    map(([, state]) => selectIsCurrentRouteAllSeasons(state)),
+    filter((isRouteAllSeasons) => Boolean(isRouteAllSeasons)),
+    mapTo(setAllSeasonsWithFoodDataStart())
+  )
+);
+
 export const goToFoodTable$: WebSeasonalEpic = (
   actions$: ActionsObservable<Action>
 ): Observable<Action> => (
   actions$.pipe(
     ofType(
-      GO_BACK_FROM_FOOD_DETAILS,
       FOOD_DETAILS_SELECT_SEASON,
       SELECT_SEASON
     ),
     mapTo(push(FOOD_TABLE_URL))
+  )
+);
+
+export const goBack$: WebSeasonalEpic = (
+  actions$: ActionsObservable<Action>
+): Observable<Action> => (
+  actions$.pipe(
+    ofType(
+      GO_BACK_FROM_FOOD_DETAILS
+    ),
+    mapTo(goBack())
+  )
+);
+
+export const goToAllSeasonsView$: WebSeasonalEpic = (
+  actions$: ActionsObservable<Action>
+): Observable<Action> => (
+  actions$.pipe(
+    ofType(GO_TO_ALL_SEASONS_VIEW),
+    mapTo(push(ALL_SEASONS_URL))
   )
 );
