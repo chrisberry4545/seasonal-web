@@ -15,13 +15,15 @@ export const ImageGridItem: SFC<IImageGridItem> = ({
   id,
   imageUrlSmall,
   onClick,
-  name
+  name,
+  skipAnimation
 }) => (
   <div onClick={() => onClick && onClick(id)}
     className='c-image-grid-item'>
     <div className='c-image-grid-item__inner'>
       <div className='c-image-grid-item__image'>
-        <BackgroundImageWithLoadingSpinner src={imageUrlSmall}/>
+        <BackgroundImageWithLoadingSpinner
+          src={imageUrlSmall} skipAnimation={skipAnimation}/>
       </div>
       <TextMedium className='c-image-grid-item__text'>
         {name}

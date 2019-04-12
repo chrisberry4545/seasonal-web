@@ -12,12 +12,15 @@ import { Dispatch } from 'redux';
 import {
   foodItemClicked,
   selectAllSeasonsVisibleFoodData,
-  selectIsAllSeasonsWithFoodDataLoading
+  selectIsAllSeasonsWithFoodDataLoading,
+  increaseNumberOfAllFoodSeasonsInView,
+  selectHasMoreSeasonsInAllSeasonsView
 } from '@chrisb-dev/seasonal-shared';
 
 const mapStateToProps = (
   state: IState
 ): IAllSeasonsInputProps => ({
+  hasMoreSeasonsInAllSeasonsView: selectHasMoreSeasonsInAllSeasonsView(state),
   isLoading: selectIsAllSeasonsWithFoodDataLoading(state),
   seasons: selectAllSeasonsVisibleFoodData(state)
 });
@@ -25,6 +28,9 @@ const mapStateToProps = (
 const mapDispatchToProps = (
   dispatch: Dispatch
 ): IAllSeasonsDispatchProps => ({
+  increaseNumberOfAllFoodSeasonsInView: () => (
+    dispatch(increaseNumberOfAllFoodSeasonsInView())
+  ),
   onFoodClick: (foodItemId: string) => dispatch(foodItemClicked(foodItemId))
 });
 

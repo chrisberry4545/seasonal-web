@@ -10,7 +10,8 @@ import { TextMedium } from '../../components-elements';
 
 export const ImageGrid: SFC<IImageGrid> = ({
   data,
-  onClick
+  onClick,
+  skipAnimation
 }) => (
   <div className='c-image-grid'>
     {
@@ -19,7 +20,8 @@ export const ImageGrid: SFC<IImageGrid> = ({
           <ImageGridItem
             key={item.name}
             {...item}
-            onClick={onClick} />
+            onClick={onClick}
+            skipAnimation={skipAnimation} />
         ))
         : <TextMedium className='c-image-grid__no-results'>
             No results found
