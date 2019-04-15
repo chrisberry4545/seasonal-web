@@ -29,3 +29,5 @@ export * from './ViewWebAppVersion/ViewWebAppVersion.connector';
 export * from './WhyEatSeasonal/WhyEatSeasonal';
 
 export * from './AllSeasons/AllSeasons.connector';
+
+export * from './AllSeasonsGraph/AllSeasonsGraph.connector';

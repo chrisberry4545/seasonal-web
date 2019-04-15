@@ -1,8 +1,17 @@
 import React from 'react';
-import { PageWithMenu, AllSeasonsConnector } from '../../components-main';
+import {
+  PageWithMenu,
+  AllSeasonsConnector,
+  AllSeasonsGraphConnector
+} from '../../components-main';
+
+import './AllSeasonsPage.scss';
 
 export const AllSeasonsPage = () => (
   <PageWithMenu>
-    <AllSeasonsConnector />
+    <div className='c-all-seasons-page'>
+      <AllSeasonsGraphConnector />
+      <AllSeasonsConnector />
+    </div>
   </PageWithMenu>
 );

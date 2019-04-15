@@ -20,7 +20,7 @@ $season-menu-padding: 1.5rem;
   z-index: 1;
   @include mq($from: tablet) {
     z-index: 0;
-    min-width: 200px;
+    min-width: $sidebar-width-desktop;
     position: static;
     top: auto;
     left: auto;
