@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { SFC } from 'react';
 
 import './FoodTablePage.scss';
 
@@ -9,7 +9,7 @@ import {
   PageWithMenu
 } from '../../components-main';
 
-export const FoodTablePage = () => (
+export const FoodTablePage: SFC<{}> = () => (
   <PageWithMenu>
     <div className='c-food-table-page__main'>
       <CurrentSeasonNameConnecter />

@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, SFC } from 'react';
 
 import './SeasonsForFood.scss';
 
@@ -11,11 +11,11 @@ import {
 
 import { ISeasonForFoodProps } from './SeasonsForFood.interface';
 
-export const SeasonsForFood = ({
+export const SeasonsForFood: SFC<ISeasonForFoodProps> = ({
   isLoading,
   seasonsSelectedForFood,
   onSeasonSelected
-}: ISeasonForFoodProps) => (
+}) => (
   !isLoading
     ? <Fragment>
     <TextHeadingMedium

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { SFC } from 'react';
 
 import {
   IntroPage,
@@ -22,7 +22,7 @@ import {
 
 import { ConnectedRouter } from 'connected-react-router';
 
-export const App = () => (
+export const App: SFC<{}> = () => (
   <Provider store={store}>
     <ConnectedRouter history={storeHistory}>
       <div className='c-app'>

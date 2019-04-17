@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { SFC } from 'react';
 import {
   PageWithMenu,
   AllSeasonsConnector,
@@ -7,7 +7,7 @@ import {
 
 import './AllSeasonsPage.scss';
 
-export const AllSeasonsPage = () => (
+export const AllSeasonsPage: SFC<{}> = () => (
   <PageWithMenu>
     <div className='c-all-seasons-page'>
       <AllSeasonsGraphConnector />

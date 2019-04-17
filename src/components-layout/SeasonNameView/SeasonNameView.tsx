@@ -1,13 +1,13 @@
-import React from 'react';
+import React, { SFC } from 'react';
 import './SeasonNameView.scss';
 import {
   ISeasonNameViewProps
 } from './SeasonNameView.interface';
 import { TextHeadingSmall } from '../../components-elements';
 
-export const SeasonNameView = ({
+export const SeasonNameView: SFC<ISeasonNameViewProps> = ({
   name
-}: ISeasonNameViewProps) => (
+}) => (
   <TextHeadingSmall className='c-season-name-view'>
     {name}
   </TextHeadingSmall>

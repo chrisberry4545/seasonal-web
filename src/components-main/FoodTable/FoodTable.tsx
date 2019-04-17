@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { SFC } from 'react';
 
 import './FoodTable.scss';
 
@@ -11,14 +11,14 @@ import {
 } from '../../components-elements';
 import { IFoodTableProps } from './FoodTable.interface';
 
-export const FoodTable = ({
+export const FoodTable: SFC<IFoodTableProps> = ({
   isCurrentTabFood,
   isLoading,
   food,
   recipes,
   onFoodClick,
   onRecipeClick
-}: IFoodTableProps) => (
+}) => (
   isLoading
     ? <div className='c-food-table__loading-spinner-wrapper'>
       <LoadingSpinner />

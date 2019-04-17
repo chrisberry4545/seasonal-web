@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { SFC } from 'react';
 import './AllSeasonsGraph.scss';
 import {
   IAllSeasonsGraphInputProps
@@ -13,9 +13,9 @@ import {
 } from 'recharts';
 import { TextHeadingMedium, TextMedium } from '../../components-elements';
 
-export const AllSeasonsGraph = ({
+export const AllSeasonsGraph: SFC<IAllSeasonsGraphInputProps> = ({
   foodInSeasonGraphData
-}: IAllSeasonsGraphInputProps) => (
+}) => (
   foodInSeasonGraphData
     ? <div className='c-all-seasons-graph'>
         <TextHeadingMedium className='c-all-seasons-graph__heading'>

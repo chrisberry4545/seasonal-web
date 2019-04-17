@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { SFC } from 'react';
 
 import './IntroPage.scss';
 
@@ -8,7 +8,7 @@ import {
   WhyEatSeasonal
 } from '../../components-main';
 
-export const IntroPage = () => (
+export const IntroPage: SFC<{}> = () => (
   <div className='c-intro-page'>
     <div className='c-intro-page__top-section'>
       <img className='c-intro-page__splash-image' src='/splash.png'/>

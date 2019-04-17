@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { SFC } from 'react';
 
 import './FoodDetailsLoader.scss';
 
@@ -10,9 +10,9 @@ import {
   IFoodDetailsLoaderInputProps
 } from './FoodDetailsLoader.interface';
 
-export const FoodDetailsLoader = ({
+export const FoodDetailsLoader: SFC<IFoodDetailsLoaderInputProps> = ({
   isLoading
-}: IFoodDetailsLoaderInputProps) => (
+}) => (
   isLoading
     ? <div className='c-food-details-loader'>
       <LoadingSpinner />
