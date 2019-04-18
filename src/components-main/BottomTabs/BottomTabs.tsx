@@ -1,4 +1,4 @@
-import React, { SFC } from 'react';
+import React, { FC } from 'react';
 
 import './BottomTabs.scss';
 
@@ -15,7 +15,7 @@ const addTabClasses = (isSelected: boolean) => (
   }`
 );
 
-export const BottomTabs: SFC<IBottomTabProps> = ({
+export const BottomTabs: FC<IBottomTabProps> = ({
   isCurrentTabFood,
   isCurrentTabRecipes,
   goToFoodTab,

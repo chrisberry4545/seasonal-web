@@ -1,4 +1,4 @@
-import React, { SFC } from 'react';
+import React, { FC } from 'react';
 
 import './Header.scss';
 
@@ -12,7 +12,7 @@ import {
 } from '../';
 import { IHeaderDispatchProps } from './Header.interface';
 
-export const Header: SFC<IHeaderDispatchProps> = ({
+export const Header: FC<IHeaderDispatchProps> = ({
   onMenuOpen
 }) => (
   <header className='c-header'>

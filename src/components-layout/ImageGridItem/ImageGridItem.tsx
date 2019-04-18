@@ -1,4 +1,4 @@
-import React, { SFC } from 'react';
+import React, { FC } from 'react';
 
 import './ImageGridItem.scss';
 
@@ -11,7 +11,7 @@ import {
 } from '../../components-elements';
 import { IImageGridItem } from './ImageGridItem.interface';
 
-export const ImageGridItem: SFC<IImageGridItem> = ({
+export const ImageGridItem: FC<IImageGridItem> = ({
   id,
   imageUrlSmall,
   onClick,

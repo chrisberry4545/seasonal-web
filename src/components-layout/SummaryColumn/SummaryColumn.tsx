@@ -1,4 +1,4 @@
-import React, { SFC } from 'react';
+import React, { FC } from 'react';
 
 import './SummaryColumn.scss';
 
@@ -11,7 +11,7 @@ import {
   ISummaryColumn
 } from './SummaryColumn.interface';
 
-export const SummaryColumn: SFC<ISummaryColumn> = ({
+export const SummaryColumn: FC<ISummaryColumn> = ({
   imageUrl,
   text,
   title

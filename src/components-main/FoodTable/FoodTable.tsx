@@ -1,4 +1,4 @@
-import React, { SFC } from 'react';
+import React, { FC } from 'react';
 
 import './FoodTable.scss';
 
@@ -11,7 +11,7 @@ import {
 } from '../../components-elements';
 import { IFoodTableProps } from './FoodTable.interface';
 
-export const FoodTable: SFC<IFoodTableProps> = ({
+export const FoodTable: FC<IFoodTableProps> = ({
   isCurrentTabFood,
   isLoading,
   food,

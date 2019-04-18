@@ -1,4 +1,4 @@
-import React, { SFC } from 'react';
+import React, { FC } from 'react';
 
 import './AboutEatSeasonal.scss';
 
@@ -7,7 +7,7 @@ import {
   TextMedium
 } from '../../components-elements';
 
-export const AboutEatSeasonal: SFC<{}> = ({}) => (
+export const AboutEatSeasonal: FC<{}> = ({}) => (
   <div className='c-about-eat-seasonal'>
     <h2 className='c-about-eat-seasonal__heading'>
       <TextHeadingLarge>

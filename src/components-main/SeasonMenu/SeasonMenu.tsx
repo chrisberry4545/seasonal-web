@@ -1,4 +1,4 @@
-import React, { Fragment, SFC } from 'react';
+import React, { Fragment, FC } from 'react';
 
 import './SeasonMenu.scss';
 
@@ -17,7 +17,7 @@ import { ISeasonMenuProps } from './SeasonMenu.interface';
 
 const OverlayFadeInOutAnimation = fadeInOutAnimation();
 
-export const SeasonMenu: SFC<ISeasonMenuProps> = ({
+export const SeasonMenu: FC<ISeasonMenuProps> = ({
   allBasicSeasonData,
   currentSeasonIndex,
   isCurrentRouteAllSeasons,

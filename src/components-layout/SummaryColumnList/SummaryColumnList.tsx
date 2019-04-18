@@ -1,4 +1,4 @@
-import React, { SFC } from 'react';
+import React, { FC } from 'react';
 
 import './SummaryColumnList.scss';
 
@@ -10,7 +10,7 @@ import {
   ISummaryColumnList
 } from './SummaryColumnList.interface';
 
-export const SummaryColumnList: SFC<ISummaryColumnList> = ({
+export const SummaryColumnList: FC<ISummaryColumnList> = ({
   columns
 }) => (
   <ul className='c-summary-column-list'>

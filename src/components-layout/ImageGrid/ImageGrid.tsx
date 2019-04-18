@@ -1,4 +1,4 @@
-import React, { SFC } from 'react';
+import React, { FC } from 'react';
 
 import './ImageGrid.scss';
 
@@ -8,7 +8,7 @@ import {
 import { IImageGrid } from './ImageGrid.interface';
 import { TextMedium } from '../../components-elements';
 
-export const ImageGrid: SFC<IImageGrid> = ({
+export const ImageGrid: FC<IImageGrid> = ({
   data,
   onClick,
   skipAnimation

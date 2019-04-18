@@ -1,7 +1,7 @@
-import React, { SFC } from 'react';
+import React, { FC } from 'react';
 import './Input.scss';
 
-export const Input: SFC<{
+export const Input: FC<{
   className?: string,
   type?: 'text' | 'number',
   placeholder?: string,

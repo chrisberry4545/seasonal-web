@@ -1,7 +1,7 @@
-import React, { SFC } from 'react';
+import React, { FC } from 'react';
 import './BareButton.scss';
 
-export const BareButton: SFC<{
+export const BareButton: FC<{
   className?: string,
   onClick?: () => void
 }> = ({

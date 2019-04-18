@@ -1,8 +1,8 @@
-import React, { SFC } from 'react';
+import React, { FC } from 'react';
 
 import './PageLayout.scss';
 
-export const PageLayout: SFC<{}> = ({
+export const PageLayout: FC<{}> = ({
   children
 }) => (
   <div className='c-page-layout'>

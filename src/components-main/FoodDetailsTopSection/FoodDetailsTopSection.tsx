@@ -1,4 +1,4 @@
-import React, { SFC } from 'react';
+import React, { FC } from 'react';
 
 import './FoodDetailsTopSection.scss';
 
@@ -12,7 +12,7 @@ import {
   IFoodDetailsTopSectionProps
 } from './FoodDetailsTopSection.interface';
 
-export const FoodDetailsTopSection: SFC<IFoodDetailsTopSectionProps> = ({
+export const FoodDetailsTopSection: FC<IFoodDetailsTopSectionProps> = ({
   foodImageUrl,
   foodName,
   isLoading,

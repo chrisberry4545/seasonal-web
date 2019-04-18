@@ -1,4 +1,4 @@
-import React, { SFC } from 'react';
+import React, { FC } from 'react';
 import './AllSeasons.scss';
 import {
   IAllSeasonsProps
@@ -8,7 +8,7 @@ import { LoadingSpinner } from '../../components-elements';
 
 import InfiniteScroll from 'react-infinite-scroller';
 
-export const AllSeasons: SFC<IAllSeasonsProps> = ({
+export const AllSeasons: FC<IAllSeasonsProps> = ({
   isLoading,
   onFoodClick,
   seasons,

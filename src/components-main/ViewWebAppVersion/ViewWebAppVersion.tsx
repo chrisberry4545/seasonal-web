@@ -1,4 +1,4 @@
-import React, { SFC } from 'react';
+import React, { FC } from 'react';
 
 import {
   PrimaryButton
@@ -8,7 +8,7 @@ import {
   IViewWebAppVersionDispatchProps
 } from './ViewWebAppVersion.interface';
 
-export const ViewWebAppVersion: SFC<IViewWebAppVersionDispatchProps> = ({
+export const ViewWebAppVersion: FC<IViewWebAppVersionDispatchProps> = ({
   onGoToWebVersion
 }) => (
   <PrimaryButton onClick={onGoToWebVersion}>

@@ -1,11 +1,11 @@
-import React, { SFC } from 'react';
+import React, { FC } from 'react';
 
 import './CurrentSeasonName.scss';
 
 import { ICurrentSeasonName } from './CurrentSeasonName.interface';
 import { SeasonNameView } from '../../components-layout';
 
-export const CurrentSeasonName: SFC<ICurrentSeasonName> = ({
+export const CurrentSeasonName: FC<ICurrentSeasonName> = ({
   currentSeasonName,
   isLoading
 }) => (

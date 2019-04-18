@@ -1,4 +1,4 @@
-import React, { SFC } from 'react';
+import React, { FC } from 'react';
 
 import './SearchBar.scss';
 
@@ -34,7 +34,7 @@ const focusOnInputIfSearchVisible = (
   }
 };
 
-export const SearchBar: SFC<ISearchBarProps> = ({
+export const SearchBar: FC<ISearchBarProps> = ({
   isSearchBarVisible,
   onHideSearchBar,
   onSearchChanged,

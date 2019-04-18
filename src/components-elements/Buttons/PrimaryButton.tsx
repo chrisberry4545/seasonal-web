@@ -1,7 +1,7 @@
-import React, { SFC } from 'react';
+import React, { FC } from 'react';
 import './PrimaryButton.scss';
 
-export const PrimaryButton: SFC<{
+export const PrimaryButton: FC<{
   className?: string,
   onClick?: () => void
 }> = ({

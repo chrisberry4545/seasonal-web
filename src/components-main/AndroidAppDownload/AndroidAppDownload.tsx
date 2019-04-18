@@ -1,8 +1,8 @@
-import React, { SFC } from 'react';
+import React, { FC } from 'react';
 
 import './AndroidAppDownload.scss';
 
-export const AndroidAppDownload: SFC<{}> = () => (
+export const AndroidAppDownload: FC<{}> = () => (
   <a className='c-android-app-download'
     href={
     'https://play.google.com/store/apps/details?id=com.chrisbdev.seasonal&p' +

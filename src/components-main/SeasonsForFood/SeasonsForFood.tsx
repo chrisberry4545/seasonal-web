@@ -1,4 +1,4 @@
-import React, { Fragment, SFC } from 'react';
+import React, { Fragment, FC } from 'react';
 
 import './SeasonsForFood.scss';
 
@@ -11,7 +11,7 @@ import {
 
 import { ISeasonForFoodProps } from './SeasonsForFood.interface';
 
-export const SeasonsForFood: SFC<ISeasonForFoodProps> = ({
+export const SeasonsForFood: FC<ISeasonForFoodProps> = ({
   isLoading,
   seasonsSelectedForFood,
   onSeasonSelected
