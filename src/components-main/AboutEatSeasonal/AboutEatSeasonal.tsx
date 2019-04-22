@@ -9,11 +9,11 @@ import {
 
 export const AboutEatSeasonal: FC<{}> = ({}) => (
   <div className='c-about-eat-seasonal'>
-    <h2 className='c-about-eat-seasonal__heading'>
+    <h1 className='c-about-eat-seasonal__heading'>
       <TextHeadingLarge>
         About Eat Seasonal
       </TextHeadingLarge>
-    </h2>
+    </h1>
     <p className='c-about-eat-seasonal__text'>
       <TextMedium>
         Eat Seasonal started because we wanted a way to easily see what fruit
