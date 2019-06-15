@@ -4,7 +4,7 @@ import {
 } from './CurrentSeasonName';
 import {
   selectCurrentSeasonName,
-  selectIsCurrentSeasonLoading
+  selectIsCurrentSeasonFoodLoading
 } from '@chrisb-dev/seasonal-shared';
 import {
   ICurrentSeasonName
@@ -15,7 +15,7 @@ const mapStateToProps = (
   state: IState
 ): ICurrentSeasonName => ({
   currentSeasonName: selectCurrentSeasonName(state),
-  isLoading: selectIsCurrentSeasonLoading(state)
+  isLoading: selectIsCurrentSeasonFoodLoading(state)
 });
 
 export const CurrentSeasonNameConnecter = connect(

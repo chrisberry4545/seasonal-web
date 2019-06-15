@@ -16,10 +16,10 @@ import {
   IFoodItemClicked,
   FOOD_DETAILS_SELECT_SEASON,
   SELECT_SEASON,
-  setCurrentFoodDetailsDataStart,
+  setCurrentFoodDetailsStart,
   INIT_APP,
   selectCurrentSeasonRecipesById,
-  setAllSeasonsWithFoodDataStart
+  setAllSeasonsWithFoodStart
 } from '@chrisb-dev/seasonal-shared';
 import { push, goBack } from 'connected-react-router';
 import { FOOD_TABLE_URL, FOOD_DETAILS_URL, ALL_SEASONS_URL } from '../../const';
@@ -76,7 +76,7 @@ export const goToFoodDetails$: WebSeasonalEpic = (
   actions$.pipe(
     ofType(FOOD_ITEM_CLICKED),
     map((action) => (
-      setCurrentFoodDetailsDataStart((action as IFoodItemClicked).foodItemId)
+      setCurrentFoodDetailsStart((action as IFoodItemClicked).foodItemId)
     ))
   )
 );
@@ -90,7 +90,7 @@ export const initFoodDetails$: WebSeasonalEpic = (
     withLatestFrom(state$),
     map(([, state]) => selectCurrentFoodDetailsId(state)),
     filter((foodDetailsId) => Boolean(foodDetailsId)),
-    map((foodDetailsId) => setCurrentFoodDetailsDataStart(foodDetailsId!))
+    map((foodDetailsId) => setCurrentFoodDetailsStart(foodDetailsId!))
   )
 );
 
@@ -108,7 +108,7 @@ export const initAllSeasonsWithFoodData$: WebSeasonalEpic = (
     withLatestFrom(state$),
     map(([, state]) => selectIsCurrentRouteAllSeasons(state)),
     filter((isRouteAllSeasons) => Boolean(isRouteAllSeasons)),
-    mapTo(setAllSeasonsWithFoodDataStart())
+    mapTo(setAllSeasonsWithFoodStart())
   )
 );
 

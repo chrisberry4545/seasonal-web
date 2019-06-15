@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 
-import './FoodTable.scss';
+import './RecipeTable.scss';
 
 import {
   ImageGrid
@@ -9,19 +9,19 @@ import {
 import {
   LoadingSpinner
 } from '../../components-elements';
-import { IFoodTableProps } from './FoodTable.interface';
+import { IRecipeTableProps } from './RecipeTable.interface';
 
-export const FoodTable: FC<IFoodTableProps> = ({
+export const RecipeTable: FC<IRecipeTableProps> = ({
   isCurrentTabFood,
   isLoading,
-  food,
-  onFoodClick
+  recipes,
+  onRecipeClick
 }) => (
-  isCurrentTabFood
+  !isCurrentTabFood
     ? isLoading
       ? <div className='c-food-table__loading-spinner-wrapper'>
         <LoadingSpinner />
       </div>
-      : <ImageGrid data={food} onClick={onFoodClick} />
+      : <ImageGrid data={recipes} onClick={onRecipeClick} />
     : null
 );

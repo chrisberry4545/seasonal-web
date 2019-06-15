@@ -5,8 +5,8 @@ import {
 import {
   selectIsMenuOpen,
   closeMenu,
-  selectAllBasicSeasonData,
-  selectIsBasicSeasonDataLoading,
+  selectAllBasicSeasons,
+  selectIsBasicSeasonsLoading,
   selectSeason,
   selectCurrentSeasonIndex,
   goToAllSeasonsView
@@ -24,10 +24,10 @@ import { selectIsCurrentRouteAllSeasons } from '../../store';
 const mapStateToProps = (
   state: IState
 ): ISeasonMenuInputProps => ({
-  allBasicSeasonData: selectAllBasicSeasonData(state),
+  allBasicSeasonData: selectAllBasicSeasons(state),
   currentSeasonIndex: selectCurrentSeasonIndex(state),
   isCurrentRouteAllSeasons: selectIsCurrentRouteAllSeasons(state),
-  isLoading: selectIsBasicSeasonDataLoading(state),
+  isLoading: selectIsBasicSeasonsLoading(state),
   isMenuOpen: selectIsMenuOpen(state)
 });
 

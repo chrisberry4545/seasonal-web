@@ -6,7 +6,8 @@ import {
   BottomTabsConnecter,
   CurrentSeasonNameConnecter,
   FoodTableConnecter,
-  PageWithMenu
+  PageWithMenu,
+  RecipeTableConnecter
 } from '../../components-main';
 
 export const FoodTablePage: FC<{}> = () => (
@@ -14,6 +15,7 @@ export const FoodTablePage: FC<{}> = () => (
     <div className='c-food-table-page__main'>
       <CurrentSeasonNameConnecter />
       <FoodTableConnecter />
+      <RecipeTableConnecter />
       <BottomTabsConnecter />
     </div>
   </PageWithMenu>

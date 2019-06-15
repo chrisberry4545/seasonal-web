@@ -6,11 +6,9 @@ import {
   selectIsCurrentTabFood
 } from '../../store';
 import {
-  selectIsCurrentSeasonLoading,
-  selectVisibleRecipeData,
+  selectIsCurrentSeasonFoodLoading,
   selectVisibleFoodData,
-  foodItemClicked,
-  recipeItemClicked
+  foodItemClicked
 } from '@chrisb-dev/seasonal-shared';
 import { IState } from '../../interfaces';
 import {
@@ -25,8 +23,7 @@ const mapStateToProps = (
   return {
     food: selectVisibleFoodData(state),
     isCurrentTabFood: selectIsCurrentTabFood(state),
-    isLoading: selectIsCurrentSeasonLoading(state),
-    recipes: selectVisibleRecipeData(state)
+    isLoading: selectIsCurrentSeasonFoodLoading(state)
   };
 };
 
@@ -34,8 +31,7 @@ const mapDispatchToProps = (
   dispatch: Dispatch
 ): IFoodTableDispatchProps => {
   return {
-    onFoodClick: (foodItemId) => dispatch(foodItemClicked(foodItemId)),
-    onRecipeClick: (recipeItemId) => dispatch(recipeItemClicked(recipeItemId))
+    onFoodClick: (foodItemId) => dispatch(foodItemClicked(foodItemId))
   };
 };
 

@@ -16,6 +16,8 @@ export * from './Header/Header.connector';
 
 export * from './PageWithMenu/PageWithMenu';
 
+export * from './RecipeTable/RecipeTable.connector';
+
 export * from './SearchBar/SearchBar.connector';
 
 export * from './SeasonMenu/SeasonMenu.connector';
