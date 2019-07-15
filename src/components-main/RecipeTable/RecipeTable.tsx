@@ -10,6 +10,7 @@ import {
   LoadingSpinner
 } from '../../components-elements';
 import { IRecipeTableProps } from './RecipeTable.interface';
+import { DietaryFiltersConnector } from '../DietaryFilters/DietaryFilters.connector';
 
 export const RecipeTable: FC<IRecipeTableProps> = ({
   isCurrentTabFood,
@@ -18,10 +19,15 @@ export const RecipeTable: FC<IRecipeTableProps> = ({
   onRecipeClick
 }) => (
   !isCurrentTabFood
-    ? isLoading
-      ? <div className='c-food-table__loading-spinner-wrapper'>
-        <LoadingSpinner />
-      </div>
-      : <ImageGrid data={recipes} onClick={onRecipeClick} />
+    ? <div>
+      <DietaryFiltersConnector />
+      {
+        isLoading
+        ? <div className='c-food-table__loading-spinner-wrapper'>
+          <LoadingSpinner />
+        </div>
+        : <ImageGrid data={recipes} onClick={onRecipeClick} />
+      }
+    </div>
     : null
 );
