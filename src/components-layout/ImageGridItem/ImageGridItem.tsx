@@ -16,10 +16,13 @@ export const ImageGridItem: FC<IImageGridItem> = ({
   imageUrlSmall,
   onClick,
   name,
-  skipAnimation
+  skipAnimation,
+  hasBottomBorder
 }) => (
   <div onClick={() => onClick && onClick(id)}
-    className='c-image-grid-item'>
+    className={`c-image-grid-item ${
+      hasBottomBorder ? 'c-image-grid-item--with-bottom-border' : ''
+    }`}>
     <div className='c-image-grid-item__inner'>
       <div className='c-image-grid-item__image'>
         <BackgroundImageWithLoadingSpinner

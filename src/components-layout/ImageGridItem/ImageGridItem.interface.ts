@@ -3,5 +3,6 @@ export interface IImageGridItem {
   name: string;
   imageUrlSmall: string;
   skipAnimation?: boolean;
+  hasBottomBorder?: boolean;
   onClick?: (itemId: string) => void;
 }
