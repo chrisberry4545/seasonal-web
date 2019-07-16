@@ -4,16 +4,25 @@
 $image-grid-item-margin: 0.9rem;
 
 .c-image-grid-item {
-  border-bottom: 1px solid $grey-med;
   margin-bottom: $image-grid-item-margin;
   width: 50%;
   display: inline-block;
   cursor: pointer;
+  border-top: 1px solid $grey-med;
+  &:nth-child(-n + 2) {
+    border-top: none;
+  }
   @include mq($from: tablet) {
     width: 33%;
+    &:nth-child(-n + 3) {
+      border-top: none;
+    }
   }
   @include mq($from: desktop) {
     width: 20%;
+    &:nth-child(-n + 5) {
+      border-top: none;
+    }
   }
 }
 

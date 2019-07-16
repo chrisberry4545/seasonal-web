@@ -18,6 +18,8 @@ export * from './Header/Header.connector';
 
 export * from './PageWithMenu/PageWithMenu';
 
+export * from './RecipesForFood/RecipesForFood.connector';
+
 export * from './RecipeTable/RecipeTable.connector';
 
 export * from './SearchBar/SearchBar.connector';

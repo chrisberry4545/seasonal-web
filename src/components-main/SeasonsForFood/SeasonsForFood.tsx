@@ -4,9 +4,9 @@ import './SeasonsForFood.scss';
 
 import {
   TextMedium,
-  TextHeadingMedium,
   TextSmall,
-  BareButton
+  BareButton,
+  TextHeadingSmall
 } from '../../components-elements';
 
 import { ISeasonForFoodProps } from './SeasonsForFood.interface';
@@ -18,10 +18,10 @@ export const SeasonsForFood: FC<ISeasonForFoodProps> = ({
 }) => (
   !isLoading
     ? <Fragment>
-    <TextHeadingMedium
+    <TextHeadingSmall
       className='c-season-for-food__list-heading'>
       When are they in season?
-    </TextHeadingMedium>
+    </TextHeadingSmall>
     <div className='c-season-for-food__list'>
       {
         seasonsSelectedForFood && seasonsSelectedForFood.map((

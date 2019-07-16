@@ -21,7 +21,7 @@ export const ImageGrid: FC<IImageGrid> = ({
             key={item.name}
             {...item}
             onClick={onClick}
-            skipAnimation={skipAnimation} />
+            skipAnimation={skipAnimation}/>
         ))
         : <TextMedium className='c-image-grid__no-results'>
             No results found

@@ -6,7 +6,8 @@ import {
   FoodDetailsLoaderConnecter,
   FoodDetailsTopSectionConnecter,
   PageWithMenu,
-  SeasonsForFoodConnecter
+  SeasonsForFoodConnecter,
+  RecipesForFoodConnecter
 } from '../../components-main';
 
 export const FoodDetailsPage: FC<{}> = () => (
@@ -14,6 +15,7 @@ export const FoodDetailsPage: FC<{}> = () => (
     <div className='c-food-details-page__main'>
       <FoodDetailsTopSectionConnecter />
       <FoodDetailsLoaderConnecter />
+      <RecipesForFoodConnecter />
       <SeasonsForFoodConnecter />
     </div>
   </PageWithMenu>
